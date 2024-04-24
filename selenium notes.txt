@@ -4,10 +4,6 @@ oru project create panna odane selenium jav ndra jar ahh anmma project la irukka
 
 
 
-
-
-
-
 automation testing drathu pure java um illa pure selenium um ila,
 
 selenium ndrathu oru web application irukkula , athavathu namma browser
