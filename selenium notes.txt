@@ -1,0 +1,3747 @@
+oru project create panna odane selenium jav ndra jar ahh anmma project la irukka class path ku add pannanum
+2nd chrome driver download panni atha veliya iruntha copy panni kondu vanthu, namma project file la or package la paste pannanum
+
+
+
+
+
+
+
+
+automation testing drathu pure java um illa pure selenium um ila,
+
+selenium ndrathu oru web application irukkula , athavathu namma browser
+ kulla paakura ella website ahhyum controle pandathukundana ella fecilities ahh vachirukura oru tool
+
+oru farmework ndrathu again and again orucode eluthaama, oru work epdi nadakkanum ndra ella procerdue um irukkum, we have to simply use that
+
+web application oda oru automation ku use pannikurathanaala namma selenium ahh oru famework n soldram
+
+ selenium oda capacities elathayume programming language kooda embed panni namakku thevaiyaana visiyatha integrate panni namma test automation senjukuram
+
+
+selenium la oru object create pannitu antha object ahh vachu. (dot) potta sila libraries varum antha librie oda vela ennanu paapol
+
+1. close():void webdriver
+
+selenium automated test run aagitu irukka windows la current windoes ahh mattum athu close pannum, onthe other hand webdriver session pinadi run aagitu than irukkum
+
+--------------------------------------------------------------------------------------------
+
+2.equals(Object obj): boolean
+
+equals la namma rendu obect ahh kuduthu rendume same ahh iruntha true illana fale nu therinchukalam
+
+
+intha equals ahh namma overide kooda pannikalam but apdi pannum potu sila condition ku etha maari overide pannanum
+
+ithu oru parameter ahh eduthukum athavathu oru object ahh parameter ahh thatanum apdi tharum pothu antha object ahh Ojcet la than store pannannum
+
+The equals(Object obj) method in Java is used to determine whether two objects are equal or not. It's part of the Object class, and it's common practice to override this method in your own classes if you want to provide custom equality comparison logic.
+
+Here's an explanation of how it works:
+
+Parameters: The method takes one parameter, obj, which is the object to be compared for equality with the current object.
+
+Return Type: The method returns a boolean value - true if the two objects are considered equal, and false otherwise.
+
+Override: When you override the equals method in your own class, you typically provide custom logic to compare the current object with another object of the same type. You need to ensure that the logic follows the general contract of equality, which includes reflexiveness, symmetry, transitivity, and consistency.
+
+Reflexiveness: A.equals(A) should return true.
+Symmetry: If A.equals(B) is true, then B.equals(A) should also be true.
+Transitivity: If A.equals(B) is true and B.equals(C) is true, then A.equals(C) should also be true.
+Consistency: The result of A.equals(B) should remain consistent as long as the objects involved are not modified.
+Common Implementation: A common implementation of the equals method involves checking if the passed object is not null, belongs to the same class as the current object, and then comparing the relevant fields of both objects to determine equality.
+
+java
+Copy code
+@Override
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true; // If the objects are the same instance, they are equal.
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false; // If the passed object is null or not of the same class, they are not equal.
+    }
+    // Custom logic to compare relevant fields and determine equality.
+    // Example: compare fields like name, age, etc.
+    // ...
+}
+By overriding the equals method in your own classes, you can define what it means for two objects of that class to be considered equal.
+ This is especially useful when you're working with collections
+ like ArrayList or HashSet, where equality is often used to determine if an object already exists in the collection.
+
+---------------------------------------------------------------------------
+
+
+3. find element(By by):webelement
+
+Find Element in Selenium command Syntax (with explanation)
+The findElement command returns an object of the type WebElement. It can use various locator strategies such as ID, Name, ClassName, link text, XPath, etc.
+
+Below is the syntax:
+
+WebElement elementName = driver.findElement(By.LocatorStrategy("LocatorValue"));
+
+inga webelement ndrathu selemiuim interfacendrathu instance name oru page la find panna pora oru webelement ah oru object ahh eduthu store vachirukka instance
+
+driver drathu selenium sebdriver oda intance , ithu vanthu bebbrowser ahh represent panni athula automatic ahh interact panna allow pannuthu
+
+By: By is a class in Selenium used to locate elements on a web page.
+
+LocatorStrategy ndrathu By ndra class thata oru place holder maari ithula thaan namma fime panna pora elements oda nameor id or class name or xpath or tag name etc
+itha use panni edukkalam
+
+example:By.ID, By.name, By.classname , By.xpath etc...
+
+loactor value ndrathu namm choose panna strategy vachu epdi oru element ahh locate pandrathu apdingra oru value ahh specify pannum
+
+
+	/*namma fidElelnt use pandrappo athu oru 8 important parameters irukku   */
+		
+		driver.findelemet(By.className(string classname)  ====>student===>id,name,classname,xpath,cssselector,
+                                    .cssselector(string cssSelector)
+                                    .id(String id)
+                                    .linktext(string link text)
+                                    .name(string name)
+                                    .partiallink Text(string PartialLinkText )
+                                    .tagname(string tagname)
+                                    .xpath(string xpathExpression)
+
+
+
+Locator Strategy comprises the following values:
+
+ID
+Name
+Class Name
+Tag Name
+Link Text
+XPath
+Locator Value is the unique method to identify the web element quickly.
+
+
+Example: Find Element in Selenium:
+
+driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys("Guitar");
+
+inga Xpath expression ahh use panni html webpage la namma thara input ahh edukkurom
+
+inga //input: select input from the webpage
+
+athukku than  [@id='gh-ac'] intha input filter use pandran ithukku munnadi input podrathaala input[@id='gh-ac'] id ndra attributes kku gh-ac ndra
+ values ahh namma inputla irunthu eduthu filter panni tharum
+
+namma input la guitar nu type pandrathu ithu uruvaga paduthum ( antha input field la guitar nu varum
+and sendkeys ndrathu selenium thara Webelement indra interface thara oru method
+
+total ahh Xpathexpression ahh use panni oru webpage la thara input ahh id ndra attribute use panni athukku values ahh gh-ac ndra valuse
+ ahh use panni guitar ndra letter ahh antha input field la eluthum
+
+namma creteria ku match aagura maari single web elememt ahh than findelement retun pannum
+
+---------------------------------------------------------------------------------------
+
+
+4.Findelements(By by):list<webelements>
+
+namma creteria ku match aagura maari ella web elememt ahh than findelements retun pannum
+
+
+Find Elements in Selenium command Syntax (with explanation)
+The findElements command returns an empty list if no elements are found using the given locator strategy and locator value.
+
+Below is the syntax of findElements command
+
+List<WebElement> elementName = driver.findElements(By.LocatorStrategy("LocatorValue"));
+
+Example: Find Elements in Selenium
+ 
+
+List<WebElement> listOfElements = driver.findElements(By.xpath("//div"));=====>namma find panna elememts oru instance la store pandram return varathu webelements ndrathaala
+                                                                                namma return type(data) um webelememt nu kuduthu store pandram and kedacha 
+                                                                                 ellathayum oru list vaanga poram
+
+div ndra ella elememts yum xpath use panni eduthu listofelememts ndra variable la store panni datatype ahh Webelement kuduthu kedcha ella variables ahhyum 
+list ahh maathikurom(List<WebElement>) so ippo namma intha listla irunthu nammaku thevaiyanathu find pannikalam
+
+Now, let’s delve deeper into understanding how to find web elements with the help of various locators. One can refer to different types of locators in Selenium.
+
+--------------------------------------------------------------------------------------------
+
+5.get( string url):void
+
+namakku thevaiyaana url ahh kondu varathu
+
+----------------------------------
+
+6. getclass():class<?>  (-------- puriyala --------)
+
+getClass() : Returns the runtime class of this(given element) Object. 
+The returned Class object is the object that is locked by static synchronized methods of the represented class.
+
+In Selenium WebDriver, the getClass() method is inherited from the Object class, which is the root class for all Java objects. 
+It is not specific to Selenium; rather, it's a fundamental method available in Java.
+
+------------------------------------------------------------
+
+7.The getCurrentUrl(url): string
+
+ browser la display aayitu irukka current web page oda ural ahh get pandrathu ita use pandram
+
+ithula browser vanthu namma  expected url ku navigateaaguthanu verify panna use aaguthu
+ It verifies that the browser has navigated to the expected URL after performing some action, 
+such as clicking a link or submitting a form
+
+------------------------------------------------
+8.getPageSource():string                            
+
+This command returns the source code of the current web page loaded in the browser, takes no parameters and returns a String value as a result.
+
+
+example:
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PageSourceExample {
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+
+        // Instantiate a new ChromeDriver instance
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to a web page
+        driver.get("https://example.com");
+
+        // Get the HTML source code of the current web page
+        String pageSource = driver.getPageSource(); =====================> inga namakku retun varaporath string ndrathaala namma instance ahh String Object vachu 
+                                                                           store pannikuram
+
+        // Print out the retrieved HTML source code
+        System.out.println("Page Source:");
+        System.out.println(pageSource);
+
+        // Close the browser
+        driver.quit();
+    }
+}
+
+
+----------------------------------------------------------------------------------------
+
+9.getTitle() :string
+
+The getTitle() method in Selenium WebDriver retrieves the title of the current web 
+
+
+
+Absolutely! The getTitle() method in Selenium WebDriver retrieves the title of the current web page. Here's how it works with an example:
+
+java
+Copy code
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TitleExample {
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+
+        // Instantiate a new ChromeDriver instance
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to a web page
+        driver.get("https://example.com");
+
+        // Get the title of the current web page
+        String pageTitle = driver.getTitle();
+
+        // Print out the title of the web page
+        System.out.println("Page Title: " + pageTitle);
+
+        // Close the browser
+        driver.quit();
+    }
+}
+------------------------------------------------------------------------
+
+10.getWindowsHandle():string
+
+
+getWindowHandle( ): When a website opens, we need to handle the main window i.e the parent window using driver.
+ getWindowHandle( ); method. With this method, we get a unique ID of the current window which will identify it within this driver instance.
+ This method will return the value of the String type
+
+website open aana udane namma main windows handle pannanum , that means driver use panni parrent window va handle pannanum
+so intha getwindow() method use panni namma oru unique id onnu vaangurom driver instance use panni, athu retun string la than varum
+
+simple ahh namma currently focusssed window or tab oda unique identifier ahh retrive panna use pandram
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowHandleExample {
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+
+        // Instantiate a new ChromeDriver instance
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to a web page
+        driver.get("https://example.com");
+
+        // Get the window handle of the current browser window or tab
+        String windowHandle = driver.getWindowHandle();
+
+        // Print out the window handle
+        System.out.println("Window Handle: " + windowHandle);
+
+        // Close the browser
+        driver.quit();
+    }
+}
+
+
+-------------------------------------------------------------------
+
+11.getWindowsHandles():set<string>
+
+getWindowHandles() returns all windows/tabs handles launched/opened by same driver instance including all parent and child window. 
+Return type of getWindowHandle() is String while return type of getWindowHandles() is Set<String>. The return type is Set as window handle is always unique
+
+
+
+In Selenium WebDriver, the getWindowHandles() method is used to retrieve a set of unique identifiers (handles) for all currently open browser windows or tabs. Here's how it works:
+
+java
+Copy code
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.Set;
+
+public class WindowHandlesExample {
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+
+        // Instantiate a new ChromeDriver instance
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to the first web page
+        driver.get("https://example.com");
+
+        // Open a new tab or window (for demonstration purposes)
+        driver.navigate().to("https://www.google.com");
+
+        // Get the handles of all currently open browser windows or tabs
+        Set<String> windowHandles = driver.getWindowHandles();
+
+        // Print out the window handles
+        System.out.println("Window Handles:");
+        for (String handle : windowHandles) {
+            System.out.println(handle);
+        }
+
+        // Close the browser
+        driver.quit();
+    }
+}
+
+
+----------------------------------------------------------------------
+
+12: hashcode():int
+
+ithu java la irukka oru bulid in function and ethuku use aaguthunna, it returns the integer hash code that represent the value of an object
+
+oru object oda hashcode valiues ahh therinchichukku hashcode () use aaguthu
+
+hashcode values hdrathu oru numerical value athu object oda state ahh represent pannum
+
+objectfields la content ahh poruthu than compute pannum
+
+ithu integer ah retu pannum and namma atha overide um pannikalam,
+itha overide pannum pothu namma kandippa quals() yum overide pannanum appothan consistancy ah maintain panna mudiyum.
+hashcode ahh overide pannum pothu hashcode contrach ahh satisfy pannanum, apdinna 2 objs ahh equals ahh vachi compare pannumpothu rendu objectum same hashcode value ahh tharanum, 
+athu unique ahh irukkanundra avasiyiam illa
+
+public class myclsss{
+private int id;
+private string name;
+
+public int hashcode(){
+
+//ethavathu fields ahh use panni hashcode ahh calculate panna porom
+
+int result = 17;
+ result= 31*result+id';
+
+result = 3* result +( name != null ? name.hashcode() : 0 );
+
+return result;
+
+}
+}
+
+
+
+In Java, hashCode() is a method available on all objects that returns a hash code value for the object. Here's how it works:
+
+Hash Code Value: The hash code is a numerical value that represents the object's state. It's typically computed based on the contents of the object's fields. The primary purpose of a hash code is to provide a way to quickly identify objects in collections such as HashMap, HashSet, etc.
+
+Return Type: The hashCode() method returns an integer value (int) representing the hash code of the object.
+
+Override: In many cases, you may want to override the hashCode() method in your own classes to provide a meaningful hash code calculation based on the object's fields. When you override hashCode(), you should also override the equals() method to maintain consistency between the two methods.
+
+Hash Code Contract: The hashCode() method must satisfy the hash code contract, which states that if two objects are equal according to the equals() method, then calling hashCode() on each of them must produce the same integer result. However, two unequal objects might have the same hash code, as hash codes do not need to be unique for different objects.
+
+Here's a simple example of overriding hashCode() method in a custom class:
+
+java
+Copy code
+public class MyClass {
+    private int id;
+    private String name;
+
+    // Constructor, getters, setters, etc.
+
+    @Override
+    public int hashCode() {
+        // Use fields to calculate hash code
+        int result = 17;
+        result = 31 * result + id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
+    }
+}
+
+
+In this example, the hashCode() method is overridden to compute a hash code based on the id and name fields of the MyClass objects.
+ The formula 31 * result + field.hashCode() is a common practice for combining hash codes of different fields.
+
+By providing a meaningful implementation of hashCode(), you ensure that objects of your class behave 
+correctly when used in hash-based collections or when their hash codes are used in other contexts.
+
+User
+result = 31 * result + (name != null ? name.hashCode() : 0); explain this
+
+Checking if name is not null.
+If name is not null, calculating the hash code of the name string.
+If name is null, assigning a default hash code of 0.
+The multiplication by 31 is a common practice in hash code calculation because it helps
+ to produce more unique hash codes and reduces the chance of hash collisions, leading to better performance 
+in hash-based collections. 
+
+java
+Copy code
+result = 31 * result + (name != null ? name.hashCode() : 0);
+
+This line of code calculates the hash code contribution of the name field in the object. Let's examine it step by step:
+
+name != null: This part checks if the name field is not null. 
+If name is not null, it evaluates to true; otherwise, it evaluates to false.
+
+name.hashCode(): If the name field is not null, this part calculates the hash code of the name string using the hashCode() method. 
+The hashCode() method returns an integer hash code value for the string.
+
+0: If the name field is null, this part assigns a default hash code of 0. 
+This is because null does not have a hash code, and using 0 as a default value helps prevent NullPointerExceptions.
+
+Conditional Operator (? :): The conditional operator ? : is a ternary operator that evaluates a boolean expression (name != null) and returns one of two values depending on whether the expression is true or false. Its syntax is as follows:
+
+
+condition ? valueIfTrue : valueIfFalse
+Putting it all together, this line of code calculates the hash code contribution of the name field by:
+
+Checking if name is not null.
+If name is not null, calculating the hash code of the name string.
+If name is null, assigning a default hash code of 0.
+The multiplication by 31 is a common practice in hash code calculation because it helps
+ to produce more unique hash codes and reduces the chance of hash collisions, leading to better performance 
+in hash-based collections.
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+13.manage():options
+
+What does driver manage () do in Selenium?
+driver. manage() is a method that returns instance of options interface, 
+now the options interface has method window() that returns instance of window interface, 
+this window interface has method maximize() which maximizes the window
+
+
+In Selenium WebDriver, the manage() method is used to access the Options interface, which provides various browser configuration and management options
+
+
+import org.openqa.selenium.Webdriver;
+import.org.openqa.selenium.chrome.chromedriver;
+import.org.openqa.selenium.chrome.chromeoptions;
+
+public class chromeOptions{
+    public static void main( string args) {
+
+
+            // Set the path to the ChromeDriver executable
+
+ System.setproperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+
+            // Create an instance of ChromeOptions to manage browser options
+ 
+   ChromeOptions options = new Chromeoptions();
+
+   
+           // Disable browser notifications
+
+              option.Addarguments("--Disable-Notifications")
+    
+       
+          // Instantiate a new ChromeDriver instance with the configured options
+
+  Webdriver driver = new ChromeDriver(options);
+
+          // Navigate to a web page
+  driver.get("https://example.com")
+
+
+driver.quite()
+
+}
+}
+
+We import the necessary Selenium WebDriver classes and the ChromeOptions class, which implements the Options interface.
+We set the system property to indicate the path to the ChromeDriver executable.
+We create an instance of ChromeOptions to manage browser options.
+We configure the Chrome options as needed. In this case, we disable browser notifications using the addArguments() method.
+We instantiate a new ChromeDriver instance with the configured options.
+We navigate to the web page "https://example.com" using the get() method.
+Finally, we close the browser using the quit() method.
+The manage() method allows you to access various browser management options, such as timeouts, window size, browser preferences, and more. 
+By using the Options interface, you can customize the behavior of the browser according to your requirements. In this example, 
+we used ChromeOptions to disable browser notifications, but you can explore other options provided by the Options interface for different purposes.
+
+=-------------------------------------------------------------------------------------------
+
+14.navigate():navigation->webdriver
+
+Navigation methods in Selenium are used to control and interact with web pages during test automation. 
+These methods allow testers to navigate through different pages,
+ interact with elements, and perform actions such as clicking links, submitting forms, or refreshing the page.
+  
+
+           In Selenium WebDriver, the navigate() method provides navigation-related functionality for the web browser.  
+                It allows you to navigate to different URLs, move backward and forward in the browser history, refresh the current page,
+
+import org.openqa.selenium.Webdriver;
+import.org.openqa.selenium.chrome.ChromeBrowser;
+
+public class NavigatioMethod{
+      public static void main(string[] args){
+       // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+
+            // Instantiate a new ChromeDriver instance
+        WebDriver driver = new ChromeDriver(); 
+
+      // Navigate to a web page
+        driver.get("https://www.example.com");
+
+      // Simulate clicking the browser's back button
+       driver.navigate().back();
+
+     // Simulate clicking the browser's forward button
+        driver.navigate()forword();
+
+          // Refresh the current page
+         driver.navigate().refresh();
+  
+      
+        // Navigate to a different URL
+       driver.navigate().to(" namakku thevaiyana link ahh ithula pottu antha page ku navigate panlam ");
+      
+       // Close the browser
+        driver.quit();
+
+}
+
+}
+
+----------------------------------------------------------------------------------
+
+15. notify():void
+
+
+intha notify class ndrathu Object class la tha defind pannirupaanga,apdinna java oda top level class la
+and object kaaga wait pandra orey oru thrad mattum wake up pandrathuku matum use aaguthu,
+apram antha thread execution ahh start pannum
+
+orey oru sigle thread wake up pandrathu mattum use aaguthu
+
+and ithu selenium webdriver oda oru method illa ithu java la irukka Object class and ithu wait() and notify machanissm 
+use panni interthred communication kaaga use aaguthu 
+
+you cant use notify() directly insted namma vathu synchronisaton mecahinism that means wait() and notify()
+ intha  mechanism ahh namma multithread scenarios la use pandram 
+
+The notify() method wakes up a single thread that is waiting on the object's monitor.
+
+ itha namma synchronised context la mattum than itha call pannanum . apdinna synchronised block or method la irunthu than call panna mudiyum
+
+object's monitor kaaga multiple thread wait panna we cant say sure the theread will awakemor not.
+
+
+The notify() method is defined in the Object class, which is Java's top-level class. 
+It's used to wake up only one thread that's waiting for an object, and that thread then begins execution. 
+The thread class notify() method is used to wake up a single thread.
+
+public class SharedResource{
+
+        private boolean ready = false;
+
+  public synchronised void WaitForReady() throws iteruptedException{
+ while(!ready){
+       wait();  // Wait until ready flag is set
+           }
+
+public synchronised void setredy(){
+
+  ready=true;
+  notify(); // Notify waiting thread
+
+              
+          }
+}
+}
+
+In this example:
+
+SharedResource is a class representing a shared resource.
+The waitForReady() method is called by a thread that needs the resource but cannot proceed until it's ready.
+The setReady() method is called by another thread to indicate that the resource is ready.
+wait() and notify() are called within synchronized blocks to ensure proper synchronization.
+
+-----------------------------------------------------------------------------------------------------------
+
+16.notifyAll():void
+
+The notifyAll() wakes up all threads that are waiting on this object's monitor
+athey maari wait() use panni obects monitor la thread wait pannitu irukkum
+
+the awakened thread will not able to proceed untill the current thread relinqushes the lock on the thread
+
+
+The notifyAll() method in Java is used to wake up all threads that are waiting on the object's monitor. 
+It's part of the wait/notify mechanism, which allows threads to coordinate 
+their execution and synchronize access to shared resources.
+
+
+public classSharedresources{
+       pricvate boolean reay= false;
+
+    public synchronised void waitForReady() throws interuptedexception{
+                 while(!ready){
+                      wait();   // Wait until ready flag is set
+          }
+
+     public synchronized void setReady() {
+        ready = true;
+        notifyAll(); // Notify all waiting threads
+        }
+       }
+      }
+     }
+
+-----------------------------------------------------------------------------------------
+
+17.switchTo () 
+
+Use the SwitchTo command to switch to the desired window and also pass the URL of the web page.
+
+In Selenium WebDriver, the switchTo() method provides access to the TargetLocator interface, which is used to switch between different browsing contexts within a web page. The browsing contexts can include frames, windows, and tabs. Here's how it works:
+
+switchTo(): This method is called on the WebDriver instance to access the TargetLocator interface.
+
+TargetLocator: The TargetLocator interface provides methods to switch to different browsing contexts within the current WebDriver session.
+
+Here are some common methods provided by the TargetLocator interface:
+
+frame(int index): Switches to the frame with the specified index. Indexing starts from 0.
+frame(String nameOrId): Switches to the frame with the specified name or ID attribute.
+frame(WebElement frameElement): Switches to the frame identified by the given WebElement.
+parentFrame(): Switches to the parent frame of the currently selected frame.
+defaultContent(): Switches to the top-level browsing context (default content) from within a frame.
+window(String windowHandle): Switches to the window with the specified window handle.
+window(Window window):  Switches to the window represented by the given Window object.
+alert(): Switches to an alert dialog for interacting with JavaScript alerts, confirms, and prompts.
+Here's a simple example demonstrating the usage of switchTo() and TargetLocator to switch to a different frame:
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SwitchToFrameExample {
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+
+        // Instantiate a new ChromeDriver instance
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to a web page containing a frame
+        driver.get("https://www.example.com/with-frame");
+
+        // Switch to the frame by index
+        driver.SwitchTo.frae(0);
+       
+
+        // Perform actions within the frame
+            webelement  frameelement = driver.findElement(By.tagNmae("p") // here tagname is paragraph
+            system.out.println(" this is the text name in this tag " + frameelement.getText());
+
+        // Switch back to the default content (top-level browsing context)
+        driver.SwitchTo.DefaultContent();
+      
+
+        // Close the browser
+        driver.quit();
+    }
+}
+
+In this example:
+
+We navigate to a web page containing a frame.
+We use the switchTo().frame(0) method to switch to the first frame on the page.
+We perform actions within the frame, such as locating and printing text from a paragraph (<p>) element.
+We use switchTo().defaultContent() to switch back to the default content (top-level browsing context).
+Finally, we close the browser.
+Using switchTo() and TargetLocator, you can effectively navigate between different frames, windows, and tabs in your Selenium WebDriver tests.
+
+-----------------------------------------------------------------------------------------------
+
+18.toString():string
+
+intha tostring() ndrathu selenium webdriver oda method illa  ithu java oda Object class la irunthu inherit pannunathu, 
+and intha tostring()oru object ahh string ahh return pannum 
+ so ithunaala oru bject oda state ahh human easyaa understand pannika mudiyuma and debugging purpose kaagaum use aaguthu.
+
+namma intha tostring ahh overide kooda pannikalam , apdi pandrathaala oru objet oda string representaion ahh return pannum
+
+            public Class Myclass{
+                private int id;
+                private string name;
+
+       public string toString(){
+                  return " myclass { " + 
+                 "id=" + id  
+                 " ,name' " + name + "/ ' "+
+                           "}"
+
+              }
+               }
+
+namma webelemts work pandrappo namma ToString() use panlam , 
+yenna atha vachu namma tagname, attributes , text content intha maari webelements oda information ahh retrive panlam
+
+WebElement element = driver.findElement(By.id("example"));
+System.out.println("Element information: " + element.toString());
+
+
+
+What is toString () and its use?
+The toString() method is used internally by JavaScript when an object needs to be displayed as a text (like in HTML),
+ or when an object needs to be used as a string.
+
+----------------------------------------------------------------------------------------------
+
+19.wait()
+
+ithu ithu java oda Object class la irunthu inherite aagura method, 
+
+innoru thread notify() or notifyAll() methodas ah invoke pandra varaikkum ithu current thread ahh wait panna vaikuathu use aaguthu,
+ namma  time period kooda athukku namma set pannikalam
+
+set panna time kula thread ku notification tharalannu , athu wait pannama executiona hh start pannirum
+
+
+public class SharedResource {
+    private boolean ready = false;
+
+    public synchronized void waitForReady() throws InterruptedException {
+        while (!ready) {
+            wait(); // Wait until ready flag is set
+        }
+    }
+
+    public synchronized void setReady() {
+        ready = true;
+        notify(); // Notify waiting thread
+    }
+}
+
+
+---------------------------------------------------------------------------------------
+
+20: wait( long timeoutmillis)
+21: wait( long timeout nanos) ======================== puriyala===================
+
+gowthanma nd vital bro tta kettukalam
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+	 driver.findElement(By.name("q")).clear():void webeleemnt -webelement
+                                         .click():void-webelement
+                                         .equals(Object obj) boolean -Object
+                                         .find element(By by):webelement -webelement
+                                         .find element(By by):List<webelement> -webelement
+                                         .getAccessablename()String -webelement
+                                         .getAriaRole():string - webelement
+                                         .getAttribute(String Name) -webelement
+                                         .getclass():class<?> - Object
+                                         .get CssValue(string propertyName) :string -webelement
+                                         .get DomAttribute( String name):string - webelement
+                                         .get DomProperty( String name):string - webelement
+                                         .getLocation():point - webelement
+                                         .GetRect():rectanble-webelement
+                                         .getScreenShotAs(output type<x> target) :X -screenShot
+                                         .getShadowRoot():search content -webelement
+                                         .getsize():dimention-webelement
+                                         .getTagname()string - webelement
+                                         .getText()string -- webelement
+                                         .hascode()int-object
+                                         .isdisplayed():boolean-webelement
+                                         .isenabled ():boolean-webelement
+                                         .isselected ():boolean-webelement
+                                         .notify() :void-object
+                                         .notifyall() :void-object
+                                         .sendKeys(character sequence...keys to send(namma send panna vendiya text)):void -webelemnet
+                                         .submit():void- webelement
+                                         .ToString():string -object
+                                         .wait()void:object
+                                         .wait(long timeoutmillis) :void -object
+                                         .wait(long timeoutmillis, int nanos) :void -object
+                                         .new
+                                         
+                                        
+ 1.clear():void webeleemnt -webelement
+                                      this method simply clear the contents of the text. 
+  ippo namma clear() use pannum pothu athu input field or text area ithula irukka ella text ahhyum clear pannidumand emptyaa vachirukkum
+
+                           WebElement inputField = driver.findElement(By.id("myInputField"));
+                           inputField.clear();
+---------------------------------------------------------------------------------                            
+
+2..click():void-webelement
+                           we can navigate from one page to another page by clicking the link buttons
+
+        click() method is used to simulate a mouse click on a web element, typically a button, link, or any other clickable element on a web page.
+
+
+---------------------------------------------------------------------------------
+3.equals(Object obj) boolean -Object
+
+        equals la namma rendu obect ahh kuduthu rendume same ahh iruntha true illana fale nu therinchukalam
+
+
+intha equals ahh namma overide kooda pannikalam but apdi pannum potu sila condition ku etha maari overide pannanum
+
+ithu oru parameter ahh eduthukum athavathu oru object ahh parameter ahh thatanum apdi tharum pothu antha object ahh Ojcet la than store pannannum
+
+The equals(Object obj) method in Java is used to determine whether two objects are equal or not. It's part of the Object class, and it's common practice to override this method in your own classes if you want to provide custom equality comparison logic.
+
+Here's an explanation of how it works:
+
+Parameters: The method takes one parameter, obj, which is the object to be compared for equality with the current object.
+
+Return Type: The method returns a boolean value - true if the two objects are considered equal, and false otherwise.
+
+Override: When you override the equals method in your own class, you typically provide custom logic to compare the current object with another object of the same type. You need to ensure that the logic follows the general contract of equality, which includes reflexiveness, symmetry, transitivity, and consistency.
+
+Reflexiveness: A.equals(A) should return true.
+Symmetry: If A.equals(B) is true, then B.equals(A) should also be true.
+Transitivity: If A.equals(B) is true and B.equals(C) is true, then A.equals(C) should also be true.
+Consistency: The result of A.equals(B) should remain consistent as long as the objects involved are not modified.
+Common Implementation: A common implementation of the equals method involves checking if the passed object is not null, belongs to the same class as the current object, and then comparing the relevant fields of both objects to determine equality.
+
+java
+Copy code
+@Override
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true; // If the objects are the same instance, they are equal.
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false; // If the passed object is null or not of the same class, they are not equal.
+    }
+    // Custom logic to compare relevant fields and determine equality.
+    // Example: compare fields like name, age, etc.
+    // ...
+}
+By overriding the equals method in your own classes, you can define what it means for two objects of that class to be considered equal.
+ This is especially useful when you're working with collections
+ like ArrayList or HashSet, where equality is often used to determine if an object already exists in the collection.
+
+-------------------------------------------------------------------------------------------------
+
+4. find element(By by):webelement 
+                                  
+
+          Find Element in Selenium command Syntax (with explanation)
+The findElement command returns an object of the type WebElement. It can use various locator strategies such as ID, Name, ClassName, link text, XPath, etc.
+
+Below is the syntax:
+
+WebElement elementName = driver.findElement(By.LocatorStrategy("LocatorValue"));
+
+inga webelement ndrathu selemiuim interfacendrathu instance name oru page la find panna pora oru webelement ah oru object ahh eduthu store vachirukka instance
+
+driver drathu selenium sebdriver oda intance , ithu vanthu bebbrowser ahh represent panni athula automatic ahh interact panna allow pannuthu
+
+By: By is a class in Selenium used to locate elements on a web page.
+
+LocatorStrategy ndrathu By ndra class thata oru place holder maari ithula thaan namma fime panna pora elements oda nameor id or class name or xpath or tag name etc
+itha use panni edukkalam
+
+example:By.ID, By.name, By.classname , By.xpath etc...
+
+loactor value ndrathu namm choose panna strategy vachu epdi oru element ahh locate pandrathu apdingra oru value ahh specify pannum
+
+
+	/*namma fidElelnt use pandrappo athu oru 8 important parameters irukku   */
+		
+		driver.findelemet(By.className(string classname)  ====>student===>id,name,classname,xpath,cssselector,
+                                    .cssselector(string cssSelector)
+                                    .id(String id)
+                                    .linktext(string link text)
+                                    .name(string name)
+                                    .partiallink Text(string PartialLinkText )
+                                    .tagname(string tagname)
+                                    .xpath(string xpathExpression)
+
+
+
+Locator Strategy comprises the following values:
+
+ID
+Name
+Class Name
+Tag Name
+Link Text
+XPath
+Locator Value is the unique method to identify the web element quickly.
+
+
+Example: Find Element in Selenium:
+
+driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys("Guitar");
+
+inga Xpath expression ahh use panni html webpage la namma thara input ahh edukkurom
+
+inga //input: select input from the webpage
+
+athukku than  [@id='gh-ac'] intha input filter use pandran ithukku munnadi input podrathaala input[@id='gh-ac'] id ndra attributes kku gh-ac ndra
+ values ahh namma inputla irunthu eduthu filter panni tharum
+
+namma input la guitar nu type pandrathu ithu uruvaga paduthum ( antha input field la guitar nu varum
+and sendkeys ndrathu selenium thara Webelement indra interface thara oru method
+
+total ahh Xpathexpression ahh use panni oru webpage la thara input ahh id ndra attribute use panni athukku values ahh gh-ac ndra valuse
+ ahh use panni guitar ndra letter ahh antha input field la eluthum
+
+namma creteria ku match aagura maari single web elememt ahh than findelement retun pannum
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+5.find element(By by):webelement 
+
+                               namma creteria ku match aagura maari ella web elememt ahh than findelements retun pannum
+
+
+Find Elements in Selenium command Syntax (with explanation)
+The findElements command returns an empty list if no elements are found using the given locator strategy and locator value.
+
+Below is the syntax of findElements command
+
+List<WebElement> elementName = driver.findElements(By.LocatorStrategy("LocatorValue"));
+
+Example: Find Elements in Selenium
+ 
+
+List<WebElement> listOfElements = driver.findElements(By.xpath("//div"));=====>namma find panna elememts oru instance la store pandram return varathu webelements ndrathaala
+                                                                                namma return type(data) um webelememt nu kuduthu store pandram and kedacha 
+                                                                                 ellathayum oru list vaanga poram
+
+div ndra ella elememts yum xpath use panni eduthu listofelememts ndra variable la store panni datatype ahh Webelement kuduthu kedcha ella variables ahhyum 
+list ahh maathikurom(List<WebElement>) so ippo namma intha listla irunthu nammaku thevaiyanathu find pannikalam
+
+
+------------------------------------------------------------------------------------------------------------
+
+6.getAccessibleName()String -webelement
+
+            The getAccessibleName() method could potentially be used to retrieve the accessible name of a web element,
+          which is used by assistive technologies such as screen readers to provide information about the element to users with disabilities.
+
+               Webelement element = drive.findelelement(By.id("myeleemet"));
+               string accessiblename=elementGetAcceessibleName();
+
+Ensuring that web applications are accessible to users with disabilities is an important aspect of web development.
+ Accessibility testing tools and WebDriver implementations that support accessibility
+ features can help automate the testing process and ensure that web applications meet accessibility standards.
+
+---------------------------------------------------------------------------------------------------------------
+
+7.getAriaRole():string - webelement
+
+                                method could potentially be used to retrieve the Accessible Rich Internet Applications (ARIA) role of a web element.
+                              ARIA roles are used to define the type of element and its purpose, especially for elements that do not have a native HTML role.
+
+    WebElement element = driver.findElement(By.id("myElement"));
+String ariaRole = element.getAriaRole();
+
+
+---------------------------------------------------------------------------------------------------
+8.getAttribute(String Name) -webelement
+
+                                GetAttribute(String) Returns the value for the attribute with the specified name. 
+            GetAttribute(String, String) Returns the value for the attribute with the specified local name and namespace URI.
+
+                  WebElement element = driver.findElement(By.id("myElement"));
+                  String attributeValue = element.getAttribute("href");
+                  In this example, getAttribute("href") is called on the element WebElement, which retrieves the value of the href attribute.
+
+Commonly Used Attributes:
+
+id: Returns the value of the id attribute.
+class: Returns the value of the class attribute.
+href: Returns the value of the href attribute for anchor (<a>) elements.
+src: Returns the value of the src attribute for image (<img>) elements.
+value: Returns the value of the value attribute for input elements.
+title: Returns the value of the title attribute, which typically provides additional information about the element.
+Accessing Custom Attributes: You can also use getAttribute() to retrieve the values of custom attributes added to HTML elements.
+
+CSS Properties: Note that getAttribute() retrieves the value of HTML attributes, not CSS properties. 
+To retrieve CSS properties, you can use the getCssValue() method.
+
+Overall, getAttribute(String name) is a versatile method in Selenium WebDriver 
+for accessing and retrieving the values of HTML attributes of web elements, which can be useful for various purposes such as verification, 
+validation, and interaction with elements in automated tests.
+
+
+-------------------------------------------------------------------------------------
+
+9.getclass():class<?> - Object
+                             It returns the runtime class of the object, which represents the actual class type of the object at runtime
+ithu oru oject ahh callm panni antha oject oda runtime class ahh represent pandra class object ahh retreive pannum
+
+                       Object mystring=new String("Helloworld");
+                        <class> objclass = mystring.getclass();  
+                system.out.println("class of object"+ objclass.getname());
+
+The getClass() method is commonly used in reflection, where you need to dynamically inspect and manipulate classes, methods, and fields at runtime.
+
+
+---------------------------------------------------------------------------------------------------
+
+ 10.get CssValue(string propertyName) :string -webelement
+
+                        web element la apply pannirukka css propery oda value ahh get pana use aaguthu
+
+and css property oda computed style ahh access pannuse aauthu , ithu moolama namma verification and validation and further element manipulation ahh automation test appo use panniakalam
+
+namma camel case la than argument ahh tharanum, and ithu oru aggument ahh than eduthukum
+css property oda value ahh therinchukanumna namma athoda name ahh arguments la thanthu value ahh eduthukalam
+
+           webelement element=driver.findelement(By.id("myelement"));
+          string elename = element.getcssvalue("colour");
+
+-------------------------------------------------------------------------------------------
+11..get DomAttribute( String name):string - webelement
+                               .getDomAttribute(String name) method would be called on a WebElement object representing the element from which
+                       you want to retrieve the DOM attribute value.
+
+namma entho element oda DOM attribute value retreive panna nenaikurame an tha webelemement object ahh call pannum
+
+ithu oru single name ahh para vaa eduthukum
+
+webElement element = driver.findelement(BY.id(myelememt));
+    string  attrivalue = element.getDOMAtribute("data-custom -attribute")
+
+
+--------------------------------------------------------------------------------------
+
+12.get DomProperty( String name):string - webelement
+
+namma entho element oda DOM attribute value retreive panna nenaikurame an tha webelemement object ahh call pannum
+
+ithu oru single name ahh para vaa eduthukum
+
+webElement element = driver.findelement(BY.id(myelememt));
+    string  attrivalue = element.getDOMAtribute("data-custom -attribute")
+
+
+
+
+----------------------------------------------------------------------------------------
+
+13.getLocation():point - webelement
+
+                    method in Selenium WebDriver is used to retrieve the location of a web element on the page.
+  It returns an object representing the location of the element relative to the top-left corner of the page or its parent element.
+
+The method returns a Point object
+
+  WebElement  element = driver.findElement(By.id(myelement)):
+  point elelocation = element.getloaction();
+
+              int xcoordination=elelocation.getx(); //vertical coordinates of element
+              int ycoordination=elelocation.hety(); //horizontal coordinates of element
+ system.out.println("element location"+"" xcoordination +"," + " "ycoordination );
+
+----------------------------------------------------------------------------------------------
+14.GetRect():rectanble-webelement
+
+          its is usedto retrieve the loaction and dimentions of the webelement
+
+The method returns a Rectangle object
+
+these rectangle class contains 4 integer properties "x" , "y" , " width ", "height" it represent the position and size of the element
+
+   webElement element = driver.findElement(By.id("myelement"))
+
+  Rectangle rect = element.GetRect();      
+   int x = rect.getX();                // the X and y values are returned in pixles
+   int y = rect.gety();
+   int width = rect.getWidth();
+   int Height = rect.getHeight();
+   System.out.println("Element rectangle: (x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + ")");
+
+
+this method used for verifying the element,and verify its in viewpont.
+
+
+-------------------------------------------------------------------------------------------------------
+
+15.getScreenShotAs(output type<x> target) :X -screenShot
+
+  it can be useful error debugging, visual testing, or generating reports.
+                                                     
+                                                    
+The getScreenshotAs(output type<X> target) method in Selenium WebDriver is used to capture a screenshot of the current state of the browser window or
+ a specific WebElement and save it to a specified target. It returns an object of the specified type (X) representing the screenshot.
+
+The getScreenshotAs(output type<X> target)
+
+   output type<X> ---> screenShot type ex: OutputType.FILE, OutputType.BASE64, or OutputType.BYTES.
+  
+   target  ---> This parameter specifies where the screenshot should be saved. depending on the output type target can be target.file, or target.base64, target.bytes
+
+OutputType.FILE: Saves the screenshot as a file. The returned object is of type File.
+OutputType.BASE64: Returns the screenshot as a Base64 encoded string. The returned object is of type String.
+OutputType.BYTES: Returns the screenshot as a byte array. The returned object is of type byte[].
+
+examples:
+         WebDriver driver = new ChromeDriver();
+         driver.get("https://example.com");
+         
+      //entire page ahhyum screen shot eduthu file ahh save pandran, so dat type file la than irukkannum
+           File fullagescreen = ((TakeScrrenShot)driver).getScreenShotAs(outputTye.File);
+
+  // ippo ethavathu element ahh mattum screenshot edukkanum eduthu byte la store pandran
+          WebElement element = driver.findElement(By.id("myElement"));
+          byte[] screenshotbytes = element.getscreenShotAs(outputType.BYTES)
+
+----------------------------------------------------------------------------------------------------------
+
+16.getShadowRoot():search content -webelement 
+
+
+           What is shadow root in Selenium?
+              
+               The ShadowRoot class represents the shadow root of a web component. 
+                With a shadow root, you can access the shadow DOM of a web component. 
+      Throws: NoSuchShadowRootException - If shadow root is not found.            
+
+                          
+                                            The Shadow DOM is simply saying that some part of the page, has its own DOM within it. 
+                      Styles and scripting can be scoped within that element so what runs in it only executes in that boundary.
+   
+
+      As an example of Shadow DOM, when you have a <video> tag on a web page, its shown as just one tag in the main DOM, 
+        but if you enable Shadow DOM, you will be able to see the video player's HTML(player DOM).
+
+
+namma shadow DOM ku navigate aaganuna namma javascript ahh use panni athukku polam selenium la 
+
+ ShadowDom Element oda namm interact pannanuna athukkana steps
+  
+      --->Find the Shadow Host Element
+      ---->Execute JavaScript:
+      ----->Interact with Shadow DOM Elements
+
+   // finding the shadow root element
+  webelement shadowhostelement = driver.findelement(By.id("shadow-host"));
+  
+      //execute javascript
+  webelement shadowroot = (webelement) ((javascriptExecuter).driver).executeScript("return arguments[0].shadowRoot", shadowHostelement)
+
+   //Interact with Shadow DOM Elements, ippo shadow rootla irunthu namma elements ahh access pannikalam and eduthuthu use pannikalam
+
+  webelement shadowelement =shadowroot.findelement(by.cssSelector("div.shadow-element"))
+ 
+
+--------------------------------------------------------------------------------------------
+
+17.getsize():dimention-webelement :
+
+             retrieve the size of the webelement
+         returns the height and width of the element
+
+  WebElement element = driver.findElement(By.id("myElement"));
+  Dimension size = element.getSize();
+  int width = size.getWidth();
+  int height = size.getHeight();
+  System.out.println("Element size: Width=" + width + ", Height=" + height);
+
+-------------------------------------------------------------------------------------------
+
+18. getTagname()string - webelement
+.getTagName() method in Selenium WebDriver is used to retrieve the tag name of a web element. 
+It returns a String representing the HTML tag name of the element.
+
+ WebElement element = driver.findElement(By.id("myElement"));
+String tagName = element.getTagName();
+System.out.println("Tag name of the element: " + tagName);
+                        
+-------------------------------------------------------------------------------------------
+
+19.getText()string -- webelement
+ 
+                 The .getText() method in Selenium WebDriver is used to retrieve the visible text content of a web element. 
+                  It returns a String representing the text content of the element.
+
+WebElement element = driver.findElement(By.id("myElement"));
+String text = element.getText();
+System.out.println("Text content of the element: " + text);
+
+----------------------------------------------------------------------------------------
+20.isdisplayed():boolean-webelement
+
+                  namma webpage la namma webelement visible ahh irukka illayaanu check panna than inth method use aahuthu
+
+the element that you want to check for visibility.
+
+webelement element = driver.findelement(By.id("id of the element"));
+boolean isvisible = element.isdisplayed();
+
+       if(isvisible){
+          System.out.println("The element is visible on the page.");
+           }
+       else{
+         System.out.println("The element is not visible on the page.");
+           }
+
+Considerations:
+
+The visibility check performed by .isDisplayed() considers both CSS styles (e.g., display: none, visibility: hidden)
+ and the element's size (e.g., width and height greater than zero).
+
+If an element is hidden using display: none or visibility: hidden CSS styles, or it's not rendered due to dynamic changes in the page, .isDisplayed() will return false.
+
+
+
+-------------------------------------------------------------------------------------
+21.isenabled ():boolean-webelement
+
+     is used to check whether the webelement is enabled or not
+
+     WebElement element = driver.findElement(By.id("myElement"));
+     boolean isEnabled = element.isEnabled();
+     if (isEnabled) {
+      System.out.println("The element is enabled and can be interacted with.");
+       }
+    else {
+       System.out.println("The element is disabled and cannot be interacted with.");
+      }
+
+***** oru element oda enble status ndrathu athoda attribut and current state ahh porutthu irukkum,
+
+   exmaple ku eduthutaa namma textarea , buttons , input fields, check boxs ithoda enable status la attributs thaan control pannum
+
+
+----------------------------------------------------------------------------------------------
+22.isselected ():boolean-webelement
+                                     nammaloda  checkbox and radio button oda webelements check aayruka illanau kanndu pidika use aaguthu
+                    commonly used in form submission scenarios or when verifying default selections.
+
+ WebElement checkbox = driver.findElement(By.id("myCheckbox"));
+  boolean isSelected = checkbox.isSelected();
+    if (isSelected) {
+      System.out.println("The checkbox is selected.");
+     } else {
+       System.out.println("The checkbox is not selected.");
+    }
+
+---------------------------------------------------------------------------------------------
+
+23.sendKeys(character sequence...keys to send(namma send panna vendiya text)):void -webelemnet
+
+                   it  is used to simulate typing text into an input field or sending key combinations to a web element.
+
+                    the parameters Accept strings, keys, or key combinations.
+             
+                   The method returns void, meaning it doesn't return any value.
+
+
+     weblement inputfield = driver.findelement(By.id("textarea"));
+     inputfield.semndkeys("hello there");
+
+usage:
+      enter text into input field
+      perform form submission
+      interact with searchbox
+      simulate keyboard Shortcuts
+     perform special key combinations
+
+****** you can also send special keys or key combinations using the Keys class provided by Selenium
+
+                                 import org.openqa.selenium.Keys;
+
+                             WebElement inputField = driver.findElement(By.id("myInput"));
+                             inputfield.sendkey(keys.ENTER);
+
+******Chaining Actions: You can chain multiple .sendKeys() calls or combine them with other WebDriver actions to perform complex interactions, 
+               such as entering text, pressing keys, and submitting forms.
+
+
+
+-----------------------------------------------------------------------------------------------
+24 .submit():void- webelement
+        
+                 is used to submit a form or submittable element. 
+                 It is typically called on a form element (like <form>), or a form-related element (like a <button> or <input> element of type "submit")
+                 to trigger the form submission process.
+
+It will submit the form to the server for processing.
+
+Here's how it works:
+
+      webelement form = drive.findelement(By.id("myform"));
+      form.submit();
+
+******Use Cases: trigger form submission when automating web forms.
+                 useful when the form doesn't have a visible submit button, 
+                 or you want to trigger submission programmatically without clicking on a button.
+
+
+
+
+-------------------------------------------------  explanamtion for below methods are already in above  -----------------------------------------
+25..hascode()int-object:
+
+----------------------------------------------------------------------------------
+26.notify() :void-object
+
+
+----------------------------------------------------------------------------------
+
+27.notifyall() :void-object
+
+
+----------------------------------------------------------------------------------
+28.ToString():string -object
+
+
+----------------------------------------------------------------------------------
+
+29.wait()void:object
+
+
+----------------------------------------------------------------------------------
+30.wait(long timeoutmillis) :void -object
+
+
+----------------------------------------------------------------------------------
+
+31.wait(long timeoutmillis, int nanos) :void -object
+
+
+----------------------------------------------------------------------------------
+32.new
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+******** selenium la oru text ahh apend pannum pothu already irukkura text oda amma thara textum append aagirum atha overide pannathu**************
+
+1.targetlocator methods paakanum
+2.swithchto methods paakanum
+
+3.dropdown select pathu padikkanum
+4.actions and associtaed method ahh padikanum
+select and methods ahh padikanum
+
+--------------------------------------------------------------
+ippo nan oru elemet ahh hover panni athoda color change aagutha illayan paakanum
+athukkana code than ithu , othu la important explanations irukku
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class MouseHoverColorChangeExample {
+    public static void main(String[] args) {
+        // Set the path to the chromedriver executable
+        System.setProperty("webdriver.chrome.driver", "path_to_chromedriver.exe");
+
+        // Initialize the WebDriver instance
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to the webpage
+        driver.get("https://example.com");
+
+        // Find the element to hover over
+        WebElement elementToHover = driver.findElement(By.id("element_id"));
+
+        // Get the color of the element before hovering
+        String colorBeforeHover = elementToHover.getCssValue("color");
+
+        // Create Actions object
+        Actions actions = new Actions(driver);
+
+        // Perform mouse hover over the element
+        actions.moveToElement(elementToHover).perform();
+
+        // Get the color of the element after hovering
+        String colorAfterHover = elementToHover.getCssValue("color");
+
+        // Compare the colors to confirm if the color changed after hovering
+        if (!colorBeforeHover.equals(colorAfterHover)) {
+            System.out.println("Color changed after mouse hover!");
+        } else {
+            System.out.println("Color did not change after mouse hover.");
+        }
+
+        // Close the browser
+        driver.quit();
+    }
+}
+
+                                    -----------
+// Create Actions object
+        Actions actions = new Actions(driver);
+
+inga actions andrathu oru class ithu namakku web oda interact pandrappo neraiya advance options ahh tharum
+exmaples mouse actions like mose movemets , click , drag and drop apram keyboard actions ellam tharum
+
+Actions ndrathu chain of user interaction ahh crreate panna use aaguthu, apdinna mouse movements,keyboard 
+actions ithellam panna use aaguthu
+
+so first namma oru Action class ku oru object create pannanum, apdi create pannum pothu athukku parameter ahh namma Webdriver oda instance (driver) ahh tharam yenna
+namma web browser sessions ahh, athavathu webpage la ennenna seiya porannu action class kooda assosicate panni namma browser la action oda methods ahh use pannikalam
+
+oru action object create pandrathanala atha vachi namma romba complex operations lam panlam like
+mouse-related actions like mouse hovering, dragging, dropping, context-clicking (right-click), and many others.
+
+
+         -----------------
+ // Perform mouse hover over the element
+        actions.moveToElement(elementToHover).perform();
+
+inga Actionclass use panni namma mose hover operation ahh namma fine panna elememntku pandram
+namma Action object oda MoveToElement method ahh chain pannuthu(ondrinaikuthu), so intha MoveToElement enna sollumna namma mouse
+cursur  ahh namma find panna element ku move pannunu sollum , and intha perform() namma chain pannirukka actions ahh ahh execute pannum
+
+The moveToElement() method instructs WebDriver to move the mouse cursor to the center of the specified element (elementToHover).
+The perform() method executes the mouse hover action on the web element.
+
+namma action object la ennnena methods irukkunu paapom
+ 
+.action.build(): retuns Actions
+       .click() :retuns Actions
+       .click(webElement target): returns actins
+       .clickAndHold() :returns actins
+       .clickAndHold(WebElement Target) :returns actins
+       .Contectclick()returns actins
+       .Contectclick(WebElement Target) :returns actins
+       .doubleClick() returns actins
+       .doubleClick(WebElement Target): returns actins
+       .DragAndDop(Webelement source,WebElement Target): returns actins
+       .DragAndDopBy(Webelement source,int XOffset , int Yoffset) :returns actins
+       .equals(Object)obj :returs object
+       .getActiveKeybord():keyInput: returs Actions
+       .getActivePointer():pointerInput: returs Actions
+       .getActiveWheel():WheelInput : returs Actions
+       .getClass()action<?> ":Object
+       .getSequences():collection <sequences> -reurs actions
+       .hashcode():int -Object
+       .KeyDown(CharSequence key):retuns Actions
+       .KeyDown(WebElement Target ,CharSequence key):retuns Actions
+       .Keyup(CharSequence key):retuns Actions
+       .Keyup(WebElement Target ,CharSequence key):retuns Actions
+       .moveByOffset(int Xoffset , int yoffset) :retuns Actions
+       .MoveToElement(WebElement Target):retuns Actions
+       .MoveToElement(WebElement Target.intXOffset, int YOffset):retuns Actions
+       .MoveToLovation(Int xcoordinate, int ycocordinate):retuns Actions
+       .notify():void-object
+       .notify():void-object
+       .pause(Duration duration) :retuns Actions
+       .pause(long pause) :retuns Actions
+       .perform():void-Actions
+       .release()Acrtion
+       .release(WebElement Target):Action
+       .ScrollByAmount(int deltaX, int deltaY)-Actions
+       .scrollFromOringins(ScrollOigin ScrollOrigin,int dltaX,int DeltaY) Actoions
+       .SrollToElement(WebElement element) :Actions
+       .sendKeys(Character sequence... key)
+       .sendKeys(WebElement target , Character sequence... key)
+       .SetActiveKeyBoard(String name)Actions
+       .setActivePointer(Kind Kind, String name) :Actions
+       .setActiveWheel(String name):actins
+       .Tick(interaction Action): Actions
+       .ToString():String
+       .Wait()
+       .wait(long timemillies)
+       .wait(long timeoutmilies , int nanos)
+       
+---------------------------------------------------------------
+ select.deselectAll(): void-select
+       .deselectbyIndex(int index) : void-select
+       .deselectByValue(Strind Value) : void-select
+       .deselectByVisibletext(String text) : void-select
+       .equals()
+       .getAllSelectedOptions():List<Webelement> :select
+       .getClass():class<?>
+       .getSelectedOption():WebElement : select
+       .getOptions():list<WebElement>
+       .getWrappedElement():WebElement-select
+       .Hashcode():int -select
+       .ismultiple():boolean -select
+       .nitify():void-Object       
+       .nitify()All:void-Object  
+       .selectByIndex( int index):void -select
+       .selectByValue(string value):void -select
+       .selectByVisibletext(String text):void-select
+       .toString() 
+       .Wait()
+       .wait(long timemillies)
+       .wait(long timeoutmilies , int nanos)
+
+
+interview question: index , value ,visible text 
+
+ ***ippo namma oru foreihgn companykku work pannitu irukkom, athula vera language la intha value va select pannu sonna namkku athu puriyathu
+    so athukku pathila 2nd ahh irukuratha select pannu 3rd ahh irukuratha select pannu athoda numbers vachi sonna (index) ahh namm
+    easyaa find out panlam,aanana antha samayathula visible ahh irukka text ahh vachi identify panna mudiyathu
+   so itha selectbyindex
+
+ **** html la coding eleuthurappo developers kandippa value nu potu eluthuvanga antha elementla irukka value va vachi findout pandrathu thaan
+selectbyvalue
+
+**** so visible text na ennana intha option tahe kulla tharathu than ex: intha chennai tha visible text
+
+ <option>chennai</option>
+<option>chennai</option>
+<option>chennai</option>
+<option>chennai</option>
+
+
+.selectByIndex( int index):void -select
+       .selectByValue(string value):void -select
+       .selectByVisibletext(String text):void-select
+
+intha 3 pathiyum interview la kandippa keppanga
+
+------------------------------------------------------------
+
+//----------------------- Mouse over and confirm the color changed -----------------------------
+
+find the element
+  WebElement targetelement = driver.findElement(By.id("j_idt88:j_idt100"));
+
+ //find the color before hovering the mouse
+ string beforecolor  = targetelement.getcssvalue("bacground-color");
+////create action object to perform some mouse and keyboard actions
+Action action = new Actions(driver);
+action.MovetoELement(beforecolor).perform();
+string beforecolor  = targetelement.getcssvalue("bacground-color");
+if(!aftercolr.equels(beforecolor)){
+sysout();
+}else
+sysout();
+}
+
+--------------------------------------------------------------------------------
+aler:
+     alert ku object create panna mudiyuathu.
+   alert indrathu oru interface than, ippo oru alertvaruthunna namma browser oda controll ellam antha alert ku poidum
+ onve antha alert ku namma confirmation kuduthathuku apram thaan , namma matha actions panna mudiyum, oru alert click pannathuku appuram antha brower la namma etha click pannalum work aagathu
+ so namma selenium la athayum sthu code eluthanum .athavathu namma driver (browser) control ahh namma alert ku switch pannamum.
+
+       Alert alert  = driver.switchTo().alert();
+
+-----------------------------------------
+relative Xpath :
+
+          it focuss on only the current node   
+
+
+Absolute Xpath:
+                  when we planning to tahe absolute xpath it will start from root node , it will start from html, body div 
+                 like this, the exact root of the element
+
+                it start with silgle slash(/)
+
+
+-------------------------------  windows ans tabs  -----------------------
+ 
+ A new tab is a additional tab witjin the same window and you can switch to different tabs to access different pages
+
+A window opens a separate instance of the browser and lets you have multiple browser opens at once
+
+------------------------------------------------------------------------------
+what is frame:
+ oru HTML page kulla different HTML ahh embed pandrathuku use aagut=ra tag  than frmaes nu solvanga
+
+namma web pages la sila adds lam varum la athellam than frames
+
+iframe ndra tag kulla tha oru HTML page la irunthu innoru HTML page ahh embed pannuvom
+
+oru element ahh inspect pannumpothu view frame source nu varuthunna antha element oru frameku ulla irukku atham
+
+ippo oru webdriver  la oru  page oda native HTML mattum than store aayirukkum, that means top level HTML kulla irukka data va mattum than athaala edukka mudiyum
+
+oru frame nu onnu iruntha atha webdriver vachi access panna mudiyathu, yenn athu embed pannirukaanga, or nested HTML
+ so namma webdriver kitta HTML kulla irukka  default content ahh paakathu athukula irukka IFRAME kulla irukka conten ahh paaru sollanum
+
+
+///////// tage kulla irukka text ahh edukkanunna getteXt() use pannanum, oru vela antha text tage kulla oru 
+          parameter ahh irukkuna ex(src,name,id,values,) ithukku get attribute use pannanum
+
+-------------------------------------------------------------
+drag and drop
+
+alert and SELECT maari ithayum AVCTION class vachi than operate pannanum, namm real time la enna panndrame, atha apdiye code valiya
+seiya poram, mouse ahh obect mela vaikuram,atha click pandram and atha click pannite drag pannitu vanthu target mela vaikurom and atha anga drop pandrom
+
+
+--------------------------------------------   tooltip --------------------
+
+title ahh vachi tha tooltip text ahh edupom
+
+tooltip nan enna na oru input arrea mela cursur vaikum pothu oru text hover aagum la than, ippo user name nau oru inputarea irukku
+//antha input area la naan mouse vachi hover pannum pothu "usename " nu varum aathan tooltip nu solluvom
+		
+//99% tooltip text vanthu oru tage oda "Title " attribute la thaan irukkum, antha attribute agg get panni tooltip text ahh eduthuklam.
+
+------------------------------------------------------------
+
+*****eppovum keyboard and mouse use pannanumna namma Actions ahh thaan use pannanu  *****
+
+
+----------------------------------------------------------------------------------
+
+LINKS:
+
+interview question :
+                  get() -----> in driver.get() method we can not go cak to previous url and we cant referesh page
+           navigate() ----> but can do referesh and can go back to previous page and move forword to next page
+
+----------------------------------------------------------------------------------------------------------------------
+
+    
+       /**** stale element reference: stale element not found **** INTHA ERROR VANTHU NIKKUM,  ithu rommba important interview question
+      
+           ippo oru page ahh refresh panndram or element ahh find out pani atha element ahh click panni innoru page kku poitu again antha home page or that previous
+           page ke varum pothu antha page refresh aayirukkum, alredy irukka elemnet ala namma puthu 
+           operarion ahh perform panna nenacha STALE ELEMENT REFFERNCE ECEPTION VARUM
+           
+           stale elemnt refrence enna sollum na , neenga oru element ahh thedi perform panna nenaikuringa but antha element intha page la currentahh illa
+            
+          so entha element aku ponumo atha again find panni click pannanum
+       
+      *correct explanation:
+      *                   the element has been deleted entirely
+      *                   the element is no longer attached to the DOM
+
+
+
+---------------------------------------------------------------------------------------
+
+paginamtion padikkanum
+
+ java la  stream.()
+      .() ithoda associate methods ellam padikkanum
+
+Map.()  an associtae methods padikkanum
+
+---------------------------------------------------------------------------------------
+
+                               xpath finding methods 
+
+1.Locating Elements with Known Attribute
+31 2.Locating Elements with known Element and Attributes
+32 3.Locating Elements with Known Visible Text (exact match)
+33 4.Locating Elements when part of the visible text is known (partial match)
+34 5.Locating Elements with Multiple Attributes
+35 6.Locating elements when starting visible text is known
+36 7.Locating Elements with Dynamic Attribute values
+37
+38 NOTE: XPath can do bidirectional navigation (Going forward and backward)
+
+relative xpath
+
+l.Locating a parent element
+43 2.Locating a child element
+44 3.Locating ancestors of a known element
+45 4.Locating following elements
+46 5.Locating preceding element
+47 6.Locating following sibling
+48 7.Locating preceding sibling
+
+                                         whata are all the xpath access available
+                         parent, child,ancestors, following,preceding, following sibling, preceding sibling 
+
+
+1.Locating Elements with Known Attribute: apdinna id, name vachi eleuthalam
+                    
+                          normal ahh namma xpath eluthanumna element, atribute itha vachi thaan eluthuvom, 
+syntax: element[@attribute] ipdi thaan eluthvo, but namakku element ye theriyalanna namma eattributes vachi thaan eluthanun
+
+so element ennane theriyalanna namma * use pannikanum  --->//*[@name='username'] ipdi pottukalam
+ithulaye namma //*[@id=''] //*[@type=''] //*[@placeholder=''] ipdi entha atribute vena eduthu use pannikalam
+
+---------------------------------------------------------------------
+2.Locating Elements with known Element and Attributes
+
+//input[@id='']  ,
+
+//input[@name='']
+
+ipdi elemnt pera munnadi pottu eluthurathu
+---------------------------------------------------------------------
+
+3.Locating Elements with Known Visible Text (exact match)
+
+antha element la irukka text ahh vachi eluthurathu than ithu
+
+<a href="http://www.orangehrm.com" target="_blank">OrangeHRM, Inc</a>
+
+inga elementa ahh theriyalannu assume pannikuran, so * potukuran
+
+//*[text()='OrangeHRM, Inc']
+
+-------------------------------------------------------------------------------
+
+4.Locating Elements when part of the visible text is known (partial match):
+  
+                                                                          namakku text fulla ahh theriyala, athula irukka paathi text ajj mattum 
+vachi eluthanumnaa namma itha use pannikalam, ithula CONTAIN ndra keyword use pannikanum.
+
+//*contains(text(),'namakku therincha text') --> element theriyama contain use panna elle mathch  elements yum kaatum
+//a[contains(text(),'OrangeHRM')]  ----> exact ahh element name potu contain use panna exact element kedaikkum
+
+-------------------------------------------------------------------------------
+
+5.Locating Elements with Multiple Attributes :
+                                              
+//*[@name='username'][@placeholder='username'][@class='oxd-input--active']
+
+
+--------------------------------------------------------------------
+
+6.Locating elements when starting visible text is known :
+
+                             id=mani123
+                             id=mani345
+                             id=mani456
+
+ipdi 1st time id =id=mani123 pottu eluthuran, next time referesh pannum pothu athu id=mani345 ipdi change aayiruthu 
+so intha maari irukka case la namma starting visible text use panlam
+
+so we can take one contant text from all words and we can use that by using (starts with)
+
+//p[starts-with(text(),'mani')]
+                                                                   
+-------------------------------------------------------------------------
+
+7.Locating Elements with Dynamic Attribute values:
+    dyamic ahh oru attribute change aaguthunna namma contain or starts with ipdi 2la ethavathu use pannikalam
+elementname[contains(attribute name,'part of the value')]
+elementname[starts-with(attributevalue,'fixed prefix or value')]
+
+//*[contains(@href,'OrangeHRM')]
+//*[starts-with(@href,'http')]
+ inga oru href attribute la irukka link name la OrangeHRM   ndra word irukku so athey enthenttha link select aagumndrath kaatum
+
+
+------------------------------------------------------------------------
+
+l.Locating a parent element:
+
+                            nalla therincha child element ahh vaci athoda parrent element ahh get pandrathu
+
+//*[@class='oxd-input-group__label-wrapper']/parent::div
+    
+  //*<known element>/parents::elementname or element name theriyalanna * potuklam
+
+      //*[@class='oxd-input-group__label-wrapper']/parent::div ithu inthan class irukaa  elementoda parrent elemnt ahh find pandrathu
+
+
+-------------------------------------------------------------------------------------------
+
+  2.Locating a child element  :
+          //div[@id='ui-datepicker-div']/table/child::tbody/child::tr
+
+date picker ndra div element la irunthy table um antha table irunthu athoda elements or child elements tbody um and antha tbody kulla 
+irunthu athoda child tr ahhyum edukkuran
+
+
+-------------------------------------------------------------------------------
+
+      3.Locating ancestors of a known element:
+
+         //< xpath of the known element>/ancestor::<element name>
+
+    //input[@type='text'][@class='hasDatepicker']/ancestor::*
+ippo ithula namma input box oda ancestor ethana element irukko athnayum kaatum
+
+
+----------------------------------------------------------------------------------
+
+                     4.Locating following elements:
+ 
+     //<known element>/following::<element name>
+
+     //div[@id='post-body-1928102390058500548']/following::form/input
+
+ippo inga id ndra current element ku keela athavathu antha div element kulla enna ena irukko ellathayum atho fowwlo pannum
+inga id element kullla irukku form ku poran and antha form kulla input ku poran
+
+
+-----------------------------------------------------------------------------
+         Locating preceding element:
+   
+     mela irukka concept ku apdiye oppsite namma kudukura element ku munnadi irukka elements ahh find pandrathu
+
+//input[@id='pass']/preceding::input
+
+ inga input element ku munnadi irukka innoru input element ahh preceding vachi edukkuran.
+
+----------------------------------------------------------------------------
+
+                    6.Locating following sibling:
+       
+                       meethi rendum puriyala
+ 6.Locating preceding sibling:
+
+     puriyala
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+--------------------------- data base concetp by using java -----------------------------------
+
+   1) Download URL for XAMPP -> https://www.apachefriends.org/index.html
+  2) How to install Xampp -> https://youtu.be/N6ENnaRotmo
+  3)Create database and table in MySQL -> https://youtu.be/Q0ATPvb0zrM
+ 4) JDBC https://mmnw.co.connector uar Jar for for MySQL MySQL https://mvnrepository.com/artifact/mysql/mysql-connector-java ->
+
+ Coding section:
+   1. Mention the type of DB to be used
+   2. Create Connection with the DB by giving the DB details
+   3. Create a statement
+   4. Execute the Query
+   5. Store the result in Result set
+   6. Get the results from Result set
+
+ **********note:Statement statement = connection.createStatement(); ithula instance statement.(dot) vachi paatha athula neralya methods
+irukku atha workout panni paakanum
+
+***********note : ResultSet result= statement.executeQuery("SELECT * FROM `table-admin`") namma query resultSet la save pannitu
+ instance aana result.(dot)  vachi paatha  lot of operations irukkum atha paakanum
+
+**************database la java va vachi  neraiya work panni paakanum  ***************
+
+
+------------------------------------------------------------------------------------------------
+ How to WRITE A File in Java
+2
+3 1. File Writer =>straight forward,direct interaction with files,less performance
+4 2. Buffered Writer =>Easiest way,performance wise better and widely used
+5 3. FileOutputstream=>for writing raw byte array information (eg. images)
+6 4. Path => this also writes byte array
+
+------------------------------------------------------------------------------------------------
+
+                                  All about Logs, Logging, Log4j in Java
+1. What is logging?
+2. Why do we need a logger?
+3. How can we achieve logging in Java?
+4. Log4j Components
+5. Priority Levels
+6. Different ways to configure log4j
+
+Problem statment
+                  1. What is logging?
+
+            Logging is the process of writing log messages
+             during the execution of a program to a central place
+
+ 2.Why do we need Logs? I
+
+          If we use SOP (System.out.print()) statements to print log messages
+            We can print log messages on the console only.
+             So, when the console is closed, we will lose all of those logs.
+           OGEORE
+3.Log4j Components
+   a)Logger -> a class inside org.apache.log4j.* package
+            We have to initialize one Logger object for each Java class.
+            We have logger class methods to indicate log levels.
+            Logger class methods: debug, info,warn,error,fatal
+  b) Appender ->to write messages into a file or DB or SMTP
+      Several types are there. Few are:
+     a) JDBCAppender
+
+     b)_FileAppender
+    
+     c)consoleappender
+
+   c)Layout ->to define the formatting in which logs will print in a repository.
+        a)PatternLayout
+        b) SimpleLayout
+        c)XML layout
+        d) HTML layout
+
+ 4. log4j priority levels:
+        debug  < info  < warn  <error  < fatal 
+
+5.Different  ways to configure log4j:
+
+     a)Basic  configurator
+           ->follows this pattern- "8-4r [&t] 8-5p &c 8x - $m8n"
+           ->Basic configurator is suitable for tutorials and temporary purpose.
+     b) Property File Configurator
+     c) Xml configurator (DOMConfigurator)
+
+
+---------------------------------------------- logger object ctare pannitu (logger.) vachaa neraiya logger methods varum athellam padikkanum
+
+   
+// ippo nama logger create pannanum, factory design patten mooliyama logger ku object create pandrathu
+	// current class(BasicConfiguratorExample) vachi logger ku object create pandran.
+	// enakku purincha varaikum ivvoru classkum namma padicha maai looger create pannanum, so intha class ku logger object(logger)
+	//create pandran, atha vachi naan logg messages ahh write pannikalam
+
+
+---------------------------------------------------------------------------------------------------
+
+
+----------------------  json   ----------------
+
+JSON stands for JavaScript Object Notation
+
+JSON is a lightweight format for storing and transporting data
+
+JSON is often used when data is sent from a server to a web page
+
+JSON is "self-describing" and easy to understand
+
+--------------------
+
+  JSON -> stands for JavaScript Object Notation
+       JSON file -> a file contains, JSON Objects with .json file extension
+
+ 2. Why do we need JSON?
+      In this modern era, we have lot of programming languages.
+     Almost all of us use different webservices in our daily life
+    (Eg. Weather report,currency conversion,enquiring Gold rates, cricket scores)
+    Our browser is the point of contact, to make the request to the server,
+    receive the response from the server, process the response and render it to user.
+
+
+  web server may be implemented with any programing language like Java, python etc.
+       Our browser can understand Javascript. So there has to be a common,
+       language independent data transmission between
+    web application and a web server.
+
+    JSON is a lightweight data-interchange format I
+    JSON is "self-describing" and easy to understand
+    JSON is language independent
+
+---------------------------------Steps to READ a Json--------------------------------------------------------
+
+
+Inverse of the above operations
+   1. create object for Json parser.
+
+   2. File reader -> read from our json file that we created before
+
+   3. Parse the read file using parse() and store it in Object
+
+   4. to get the values, from the parsed object, use get ()
+       but to do that, we have to convert the object to Json 0bject.
+
+   5. Now use, get () with Key
+       to retrieve name and Age and store them after type casting
+
+   6. to fetch data from Json Array, use iterator () and iterate them and print
+
+ ----------------------------------------------------------------------------------------------------------------------
+
+ --------------------------SELENIUM INTERVIEW QUESTIONS - PART -1  ----------------------------------------------------
+    Waits in SELENIUM
+    1) Why do we get exceptions when interacting with web elements?
+    Reasons:
+           1. The Element we try to interact/find is not at all present in the DOM.
+           2. Element is present in DOM but NOT visible
+           3. Element is present in DOM but NOT interactable (enabled)
+
+   2) What to do in this case?
+          Known solution for us: Thread.sleep(5000)
+   3) Why to use Selenium Waits over thread.sleep()?
+     
+    sleep(10)       
+          element ---->  if the elemetnt found in 2 secs and 8 sec is wasted here, because it will the whole 1o sec, een if the element is fount before that
+    sleep(10)
+          element ----> elemetnt ready execute in 2 secs and 8 sec is wasted here
+       even if the elements ready to execute , but the sleep will finish tnhat 10 secs after it will allow elelemnts to interact
+      so here a lot of time is wasting here when we use sleep method.
+
+    but in implicit wait() la namma oru 10 sec wait() kudukkuromna, ovvoru 0.5 sec kum antha element irukka illayanu 
+   check pannite irukkum, incase 2 sec la element ahh find panniruchann meethi 8 secs wait pannathu
+
+    *** ipdi ovvoru .5 milli second kum request DOM kitta poite irukkum this is called *** polling  ***
+
+   4) What are selenium waits?
+     Selenium Waits are commands that help wait for a certain condition to happen before proceeding further in the code. 
+
+   5) Types of Waits in Selenium -> Implicit, Explicit, Fluent
+
+   6) Which one is better? Pros and cons
+
+************** intha wait() pathi coding la la expalanation kuukka poran, 
+                 athukku class name ellam """" SeleniumInterviewQuestionsWait """"" ippdi 
+                                                 ovvoru topic kum peru vaipen *******************
+    
+    sleep(10)       
+          element ---->  if the elemetnt found in 2 secs and 8 sec is wasted here, because it will the whole 1o sec, een if the element is fount before that
+    sleep(10)
+          element ----> elemetnt ready execute in 2 secs and 8 sec is wasted here
+       even if the elements ready to execute , but the sleep will finish tnhat 10 secs after it will allow elelemnts to interact
+      so here a lot of time is wasting here when we use sleep method.
+
+    but in implicit wait() la namma oru 10 sec wait() kudukkuromna, ovvoru 0.5 sec kum antha element irukka illayanu 
+   check pannite irukkum, incase 2 sec la element ahh find panniruchann meethi 8 secs wait pannathu
+
+    
+ 1.implicit wait():
+
+                      WebElement elel1 = driver.findElement(By.id("j_idt87:j_idt89"));
+		elel1.click();
+		
+		WebElement txt = driver.findElement(By.id("j_idt87:j_idt90"));
+		txt.click();
+		
+	 /* 1.inga naan oru element ahh click pannitu athoda action nadakurathuku munnadi athula irukka innoru element ahh nana access panna
+		  try pandran , nan clcick pana element ye innum process panni muduiklla driver la(webpage)  athukku timeuse panni ithana sec apuram than
+		  athu open aaganunu program eluthirupaaga , athukulla athula irukka innoru element ahha 
+		  access panna try pandrathaala. no such elelmnet error varum, ith overcome panna thaan namma **waits** londu vanthom */
+		
+		//so namma driver kitta odane antha element click panni innoru elementa hh pannum pothu odane exception tharavendam
+		// oru particular seconds wait pannunu solla poram, implict wait() method use panni	
+        	
+ /*2.ippo nan webbrowser kitta naanedukukka pora element unta ippo illa naalum intha time vara wait pannu athkull no such element
+		   exception ahh kuduthuratha nu soldran, so intha elements ahh proceed pandrathuku munnadi ithana second s wait pannu apdinnu
+		   implicit wat() use panni soldram
+		   
+		   pros:
+		   ------
+		  1.intha implicit wait() ndrathu driver initialise ahgi namma antha driver ahh driver.quit()  potu quite panndra varaium
+		  athukulla irukka ella elements ku intha implicit wait() porunthum , so driver intialise panna odane wait ahhyum initialise panniranum
+		  
+		   cons:
+		   ----- 
+		   ippo implicit wait use panddra thaala intha implicit wait enna pannnumna, namma element ulla irukka illayanu ellam
+		   paakathu, antha elemnt visible hh irukka, anthaelement ahh interactabl  ahh illayannu paakathu, apdi mpaakama athioda work ahh
+		   process pannum
+		    atahavathu  element irunthalaey pothum nu wait() operation pannum
+		                            
+                   2.and ella elements ku ithu common ahh wait pannumnu sollitam, theva illatha edauthula ellam ithu wait pannum, 
+                   3. namma ithula condition kuduthu wait panna solla mudiyathu, oru button enable aagatum, oru element visible agatum
+                 apdinnu  nammalaala entha condition um kudukka mudiyathu.
+
+----------------------------------------------------
+
+     Explicit Wait:
+
+      It allows us to command the webdriver to wait until several
+     conditions are met.
+
+    How to use:
+        l.Create WebDriverWait instance (0bject)
+       2. wait until (condition to be met)
+        Some conditions:
+
+       1.elementToBeClickable()
+      2.elementToBeSelected()
+      3.presenceOfElementLocated ()
+      4.textToBePresentInElement ()
+      5. alertIsPresent () and so on. innum neraiya irukku ithayum padikkanum******************
+
+    how is it better from implicit wait:
+
+--------------------------------------------------------------------------------------------------------------------
+
+---------------------------************ note: for implicite wait  ----> driver.manage().timeouts.implicitwait(11, TimeUnit.SECONDS)
+                           *******************for explicitwait()  ----->WebdriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10))
+                           ****************** for fluent wait()  ----->Wait wait = new FluentWait(driver) ---> itha wait ndra interface la irunthu edukurom
+
+   FULENT WAIT()
+      Fluent Wait in Selenium marks the maximum amount of time for Selenium WebDriver
+     to wait for a certain condition (web element) becomes visible.
+    It also defines how frequently WebDriver will check if the condition appears before throwing 
+    the “ElementNotVisibleException”
+
+inanother worrds :
+                 the fluent wait is used to tell the webdriver to wait for the certain condition as well as the frequency with which we want to check the conditions
+before throwing an exception
+
+                 by setting the frequency , we are reducing the burdun of default polling.
+
+
+     for example ippo oru oru element 4 secs ku appuram than appear aaguthunnu namakku theriyum, so 4 secs munnadi antha DOM ku vara chance illa nu nammaku theriyum
+so, namma antha nedathula implicit() or explicit wait() use panlam, but intha edathula antha waitum each and every 0.5 secs or 500 milliseconds 
+ DOM kitta poi check pannitu varum element apeared ahh illayanu, so athana thadava antha element ku request kuduthute irukkum
+    so intha maari poling nadanthute irukkum, so enakku 4 secs appuram than oru elelment kedaikum na antha anthe 4 secs la nan implict or explicit wait() use panni
+ element available ahh illyanu check panna vendiya avasiyam illa, so antha maari edathula namma fluent wait use panni namma intha poling time time ahh adjust panlam
+ 4 secs after poi antha element ahh check pannu apdinu sollalam
+
+
+how to use:
+                 Wait wait = new FluentWait(driver)
+                               .withTimeout(30,seocnds)
+                               .polingEvery(3,seconds)
+                               .ignoring(Exception.class);
+                                         or
+ Wait wait = new FluentWait(driver).withTimeout(30,seocnds) .polingEvery(3,seconds).ignoring(Exception.class);
+
+
+                               .withTimeout(duration.ofseconds(12))
+                               .polingEvery(duration.ofseconds(4))
+                               .ignoring(NoSuchElementException.class);
+
+apply method :
+         webelement prfile = wait.until( build in function ah use pnnama , nama oru fuction ahh inga eluthikanum(new function){
+         public webelement apply(Webdriver driver){ // *****inga method name ku namma apply ndra pera mattum than namma vachi aaganum, vera entha perum vaika mudiyathu ******
+    return driver.findElement(By.id()); // ithukulla namma ena webelement ahh find pandram fin panni reurn pannikalam, athukappuram normal ahh namma antha elementa
+   }                                   enna opereation venna pannikalam
+  
+});
+
+-----------------------------------------------------------------------------------------------------------
+ 
+---------------------------- difrenece between quite and close ---------------------
+
+  close : the close method close the browser window that driver has fucuss of not focused of user
+   quite: it closes all browser windows that is associtaed with the driver 
+
+
+
+------------------------ get and navigate difference
+
+get and navigate both is used to retrieve the url
+
+in get we can only retrive the url. and it will not store the history
+ but navigate will store the history, that means we can go back to previous page and go for next page and we can refersh the page
+
+but one thing , the get method wil wait to load or appear all the elements present in the DOM
+
+but the navigte will not wait to appear all the elements present in the dom, 
+
+-------------------------------------------------------------------------------------------------
+
+Take a screenshot in Selenium
+
+      1. Using Selenium's TakesScreenshot interface
+        NOTE: everyone use to say "take" actually it is "Takes"
+      2. call GetScreenshotAs method and store it in a file
+      3. Create an image file in any location
+      4. copy the screenshot in destinationFile (image) file, using FileUtils. (commons-io)
+         or we can use Selenium's FileHandler as well to copy the file.
+
+        Another Way to Take Screenshot:
+  Robot class.
+
+   Now hold on... why there are two ways, to implement same things
+
+   Isn't Selenium's TakesScreenshot enough?
+    Its more than enough. But if we have below requirements,
+
+    take screen shot when an alert is open.
+    It will give you an exception stating "org.openqa.selenium.UnhandledAlertException"
+
+     
+------------------ Robot class. (java.awt)
+
+ Now hold on... why there are two ways, to implement same things
+
+   Isn't Selenium's TakesScreenshot enough?
+   Its more than enough. But if we have below requirements,
+
+   take screen shot when an alert is open.
+   It will give you an exception stating "org.openqa.selenium.UnhandledAlertException"
+   Take screenshot including address bar and tab opened. (Full screenshot)
+
+  Screenshot via Robot Class:
+    1) Create an object of Robot class.
+    2) Get the screen size and store.
+    3) Use rectangle clss and pass the screen size.
+    4) Use createScreenCapture (rectangle) of Robot class and capture screenshot.(source)
+    5) Define destination path file for screenshot
+    6) Write temp file in to destination file. (ImageIO)
+
+        
+        WebElement ele =driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt91\"]/span[2]"));
+        ele.click();
+        // step1: create robot class
+            Robot robot =new Robot();
+         // step2:screensize edukkanum
+             Dimension sreensize= Toolkit.getDefaultToolkit().getScreenSize();
+         //edutha screensize ahh rectangle class la tharanum
+              Rectangle rectable = new Rectangle(sreensize);
+          ////finaly screensht edukurom, screencapture ndran robit class method use panni
+            BufferedImage imgaefilesource =  robot.createScreenCapture(rectable);
+          //screeshot store panna place soldran
+          File destinationfile = new File("D://robotimg2.png");
+          
+          // fnall ahh image ahh write pandran
+          ImageIO.write(imgaefilesource, "png", destinationfile);
+    
+
+--------------------------------------------------------------------------------------------------
+
+--------------------------   page referesh ---------------------------------------
+
+ 1.  we can use refresh command from navigate
+ 
+2. or we can use driver.getcurenturl()
+
+3.we can use javascriptexecuter:location.reload() or history.go(0)
+
+4. we can use f5 class by using robot classs
+ 
+------------------------------------------------------------------------------------------------
+ -----------------------------------diffrent ways to maximise the browser---------------------------------
+    1.  we can use maximise () in selenium
+    2.use the dimention (selenium) and window setsize()
+    3.chromeOptions -->  --start-maximized
+
+ ChromeOptions options = new ChromeOptions();
+        options.(dot) pottathuku appuram neraiya options varum atha namma padikkanum neraiya irukku
+
+       type: maximise()
+	/*
+	 * driver.manage().window().minimize(); 
+	 * driver.manage().window().maximize();
+	 */
+        
+	/*
+	 * //type 2: use dimension method 
+	           Dimension dmension = new Dimension(1200, 500);
+	           driver.manage().window().setSize(dmension);
+	 */
+         
+         
+         // matha 2 method um luch pannitu than maximize pannum , but nmma chrome option use pannumpothu
+         //launch aagum pothrey athu maximise aagikum, intha chromroptions ahh namma neraiya
+         //visiyathuku use panlam
+         
+       //type 2: chrome options
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        
+        // namma intha chromeoptions aahh namma intha chrome driver ku starting laye pass pannanum
+
+              System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\eclipse-workspace\\selenium_tutorials\\src\\chromedriver.exe");
+	      ChromeOptions chromeoptions = new ChromeOptions();
+             chromeoptions.addArguments("--start-maximized");
+         
+          oru vela firfox use panna namma intha Firefoxoption aahh namma intha firefox
+         driver ku starting laye pass pannanum
+          
+             firefoxOptions options = new FirefoxOptions();
+
+
+-------------------------------------------------------------------------------
+
+-*******-*** impotant------------  launch browser witout system.setproperty() --------------------************
+
+system.setproperty() illamaley namma broswe open panna mudiyumanu ketta mudiyum,
+athukku first namma chromedricerod aoda location ahh eduthu copy pannikanum
+and system la environmenet type environmental variable ahh select panni athukulla poikanum, athula total system ke namma environmental variable
+ah set pannanum, 
+         1. go to environmental variable ---> 
+         2.  go to system variables ----> 
+         3. click the path and edit
+         4.  C:\Program Files\Common Files\Oracle\Java\javapath 
+
+                          ipdi ennoda path ithukku munndadi add pannirunthathu irukkum, athula poi namma : vachi
+           nanna chromedrver location ahh set pannikanum
+
+            C:\Users\User\eclipse-workspace\selenium_tutorials\src\C:\Program Files\Common Files\Oracle\Java\javapath 
+                we dont need to mention tha chromedriver.exe here
+         5. restart the system 
+        6. we ca go and in cmd prompt. go to cmd  an type chromedriver
+      7 . now i added the enviroment variable
+      8. ippo nan eclipse poi class create pannitu thula system.set property pottu ennoda webdriver name and anthoda location ahh
+       system.set property ndra line ahhye use pannama  direct ahh webdriver driver = new chromedriver(); mattum potu run panlam
+
+------------------------------------------------------------------------------------------------------------------
+
+****************** handling authentication pop while using application ***********************
+        Handling Authentication Pop Ups in Selenium
+
+  exmaple ku nan  AUT (Application Under Test)= http://the-internet.herokuapp.com/basic_auth eduthu work pandran
+ 
+  Problem:
+   1. We can't inspect and sendkeys
+
+     How to solve:
+             1. Use a third party tool like Sikuli, AutoIt
+      
+                         or
+  // ITHUKKU PATHILA NAMMA  user name and password oda credentials ahh namma direct ahh url valiyaave kudukkalam
+
+             2. http://username:password@url.com //Sending credentials via URL
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+************ List<WebElement> ele =driver.findElements(By.xpath("(//ul[@role='listbox'])[1]//li"));
+                ele.getindex()
+
+(****************ennanala oru list kulla getindex use panna mudiyathu
+//find elelemnets use panni antha elements ahh eduthu list la store pannum pothu athoda instance vachi ennala get index use panna mudiyum
+// but ithulve antha loop ahh for each la or for la kudthu ovvoru elementa hh edukkum pothu angga ennala index use panna mudiyathu .
+athukku pathila nan veliya integer value onnu poytu loop la incremenet pannitu antha number vachi access panlam
+
+        int position=0;
+for (WebElement allele : ele) {
+	System.out.println(allele.getText());
+	position=position+1; //ot position++;
+	
+	
+	if(position ==3) {
+		allele.click();
+		break;
+	}
+}
+******************
+
+------------------------------------------------  switch to active element  ---------------------------------------------------
+
+
+		// find elementey use pannama namma oru search term enter pannanu
+		//inga css selector, idname, x path, nu ethyum use pnna koodathu, but search term ahh input area la enter search pannanum
+
+   athukku namma swithto().activeElement() use panlam
+    yenna namma page open panna oa=dane namma paathurupppom namma curser automatic ahh antha input areala blink aagitu irukkum, apdinna athan active la irukkunu meaning
+    so namma switch to active element kuduthutaaley namma search term enter panniralam 
+
+---------------------------------------------------------------------------------------------------------------------------
+   
+                              ************* How to Rerun the failed test cases *************************
+
+  way 1. we can manualy rerun the testng-failed.xml file fro test-output
+
+
+  
+         ---=-=--=--==========-====-=
+   1. We can run testng-failed.xml
+   2. Using IRetryAnalyzer Interface
+   3. Using IAnnotationTransformer (I) and IRetryAnalyzer (I)
+
+   namma ippo TESTNG use panni test case ahh run pandran, oru 4 test case la 2 test case faulaagiduthu vachita atha immediate ahh 
+   failed test case mark pannama, unmayana code thappa irunthu illa bug irunthu fail aayiruntha ok ,
+  but vera ethavathu unexpected issue, browser issue, intha maari case la fail aagiruntha odade test failed nu podama
+   or 2 or 3 times retry panni paathutu appovium fail aana appothan anga ethanuna bug irukku nenachitu nreport panna mudiyum
+   so faol aana test case ahh retry pandrathu than important , 3 ways la itha panlam
+
+     1. We can run testng-failed.xml:
+                              1. testNG xml create panni antha testNG xml tha namma test case ahh usualla pottu vachiruppom
+                              2. namma run pannum pothu intha TESTNG  fail aagura test cases ellathayum testng-failed.xml apdingura suit la pottu vaikkum
+                                 antha xml file ahh again namma run as testNG suit ku tharalam
+                              3.ippo 10 test case la 4 test case fail aayita athu testNG.xml file jku pogum, nama again poi atha run panni paakalam
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class SeleniumInterviewQuestionsReturnFailedTestCase {
+
+	
+	/*
+		 @Test
+		 public void testcase1() {
+			 Assert.assertEquals(true, false); // (true, false) inga purpose ahh true ahh expect pandran, aana false varumndra maari potrukan
+			                                   // so inga false tha varum
+		 }
+		 
+		 public void testcase2() {
+			 
+			 Assert.assertEquals(true, false); // ingayum athey maari potrukkan.inga 2 test case um fail aagura maari potrukkan, 	 
+		 }	 
+		 }
+
+	
+			 ithoda xml file ahh run pandra test fail nu vanthuruchu
+			  java.lang.AssertionError: expected [false] but found [true]
+			  
+			  ithoda explanation ann ithodaxml file kuduthuruukan 
+			  
+			  inga 2 test case um fail aayiruch so fail aana test case enakku test output folder la testng-failed xml nu file poi senthurum
+			  anga poi nan atha again rerun panni paakalam
+			  	   
+			  	   
+			   keelairukka example ahh again mela irukka code ahh run pannioru test case pass panni vavhi fail aan 
+			   test case file kulla poguthhanu pakuran
+			 
+			 */
+@Test
+public void testcase1() {
+	 Assert.assertEquals(true, false); // (true, false) inga purpose ahh true ahh expect pandran, aana false varumndra maari potrukan
+	                                   // so inga false tha varum		 
+}
+public void testcase2() {
+	 
+	 Assert.assertEquals(true, true); // ingayum athey maari potrukkan.inga 2 test case um fail aagura maari potrukkan, 
+	 
+}
+}
+
+******************** mela irukka program ahh run panna keele irukka MXL file ahh run pandtran
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- suite nu oru tag create panndran  -->
+<suite name= "testsuite" verbose="2" >
+<test name="firsttest">
+
+<classes>
+
+<class name="interviewquestions.SeleniumInterviewQuestionsReturnFailedTestCase"></class>
+
+</classes>
+</test>
+</suite>
+
+<!-- 	ithoda xml file ahh run pandra test fail nu vanthuruchu
+			  java.lang.AssertionError: expected [false] but found [true] 
+			   
+			   
+	ippo itha naan rerun pannanum, inga 2 test case ndrathaala rerun panniralaam, but oru 100 test case la 40 test case faila aana
+	antha situation la namma rerun pandrathu kastam.
+	
+	 project ahh refersh pannitu 
+	 test-output folder ponanmna testNG.failed.xml nu  oru file irukkum
+			  -->
+
+************************** fail aanathuku appuran automatica ahh oru testng-failed.xml file create aayidu fail aana test case oda
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Failed suite [testsuite]" verbose="2">
+  <test thread-count="5" name="firsttest(failed)" verbose="2">
+    <classes>
+      <class name="interviewquestions.SeleniumInterviewQuestionsReturnFailedTestCase">
+        <methods>
+          <include name="testcase1"/>
+        </methods>
+      </class> <!-- interviewquestions.SeleniumInterviewQuestionsReturnFailedTestCase -->
+    </classes>
+  </test> <!-- firsttest(failed) -->
+</suite> <!-- Failed suite [testsuite] -->
+
+
+______________________________________ way 2:
+
+    2.Using IRetryAnalyzer listener Interface ---> intha RetryAnalyzer vachi faile aana test case ahh namma automatic ahh rety panlam, ithu oru listener
+
+test case fails aana testng-failed.xml la po namma tha manual ahh rery pannanum, but fail aana test cases ahh automatic pannanumna RetryAnalyzer use panlam
+
+athuku namma intha retry analyser oru class la implement pannanum
+
+meethilellam code la irukku anga paathu padichiko
+
+____________________________________________________________________________________________________________________________________________________
+
+                                            WEB PAGE SCROLLING  
+
+         SCROLLING UP and DOWN
+
+      We have to use Javascript Executor for scrolling.
+
+     Javascript function to scroll down:
+ 
+     1. window.scrollBy (x,y)
+            or window.scroll (x,y)
+
+     Javascript function to scroll UP:
+                     window.scroll(x,-y)
+
+     Scrolling to Bottom of a page:
+                    window.scrollTo(0, document.body.scrollHeight)
+
+    Scrolling to Top of a page:
+    window.scrollTo(0,0)
+
+   scroll o a particular position where an element is present
+        ("argument[0].scrollIntoView(true);",element)
+
+
+   using Robor class:
+                    Robot robot =new Robot();
+                    robot.keypress(keyeven.vk_page_down);
+                    robot.keyrelease(keyeven.vk_page_down);
+
+ _________________________________________________________________________________________________
+        
+                                            // hard assertion
+
+	// hard assertion la athavathu normal assertin la assert fail aana code further ahh execute aagathu apdiye nindrum
+	
+	/*
+	@Test
+	public void assertTest() {
+		System.out.println("before assert");
+		
+		// inga venumne assert ahh fail panni , assert fail aanathuku aapuram code next line ku poguma nu paakuran
+		Assert.fail();
+		  //or
+//		Assert.asserEquals(True, false);
+		System.out.println("after assert");
+	}
+	 
+	*/                              // soft assertion or verify
+	
+	//softassertion or verify ndrathu assert fail aanalum further ahh athuku keeela irukka code execute aagum
+	//SoftAssert nu oru class irukku athukku object create panni atha vachi than namma assertion pannanum
+	
+	
+//	  @Test 
+//	  public void verifyTest() {
+//		  System.out.println("before assert");
+//		  SoftAssert assert = new SoftAssert();
+//	  
+//	      assert.fail();
+//	      System.out.println("before assert");
+//	 
+//	  
+//	  }
+//	 
+
+
+_______________________________________________________________________________________________________________________
+
+                            send keys to input area without keyboard
+
+       //way 1: Using sendkeys();
+        
+		/*
+		  WebElement ele = driver.findElement(By.name("q"));
+		  ele.sendKeys("viji");
+		 */
+		
+     // way 2:  identifying the element  by Using javascript method and send keys within that
+      
+    //----------------------------------------------------------------------------------------
+        
+      /* JavascriptExecutor executer = (JavascriptExecutor) driver;
+       executer.executeScript("document.getElementsByName('q')[0].value = 'vijay'", "");
+       */
+        
+       //document.getElementByNmane('q')[0]"  --> element name q vachi edukkuran, oru vela q ndra name la neraiya list element irunthalum 
+       //athula irukk first element[0] nu specific ahh potrukkan, and athukkana value athavathu enna type panni athukulla thara poramnu 
+       //value la sollanum athu antha key board ku pogum
+    //-----------------------------------------------------------------------------   
+       
+       //way 3: identify elements by using driver method and executing javascript along with the elements
+        
+     /*   JavascriptExecutor executer = (JavascriptExecutor) driver;
+       
+       WebElement ele = driver.findElement(By.name("q"));
+       
+       executer.executeScript("arguments[0].value='vijay'", ele); */
+       
+//-----------------------------------------------------------------------------------------------------
+       
+       //way 4: using robot class we can send each keys separately:
+       driver.switchTo().activeElement();
+        Robot robot = new Robot();
+        
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyPress(KeyEvent.VK_I);
+        robot.keyRelease(KeyEvent.VK_I);
+        robot.keyPress(KeyEvent.VK_J);
+        robot.keyRelease(KeyEvent.VK_J);
+        robot.keyPress(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_A);
+        robot.keyPress(KeyEvent.VK_Y);
+        robot.keyRelease(KeyEvent.VK_Y);
+       
+
+
+_____________________________________________________________________________________________________________________________
+
+
+                               clicking all the check boxes in the page
+   taking xpath for multiple class names in in single element
+//div[contains(@class,'ui-chkbox-box ui-widget') and contains(@class ,'ui-corner-all') and  contains(@class,' ui-state-default')]
+
+<div class="ui-radiobutton ui-widget">
+<div class="ui-helper-hidden-accessible">
+<input id="config-form:j_idt62:1" name="config-form:j_idt62" type="radio" value="layout-wrapper-overlay-sidebar" </div>
+<div class="ui-radiobutton-box ui-widget ui-corner-all ui-state-default">
+<span class="ui-radiobutton-icon ui-icon ui-icon-blank ui-c"></span>
+</div>
+</div>
+
+ ithula span element ku  xpath ipdi than edukkanum
+
+//div[contains(@class,'ui-helper-hidden-accessible')]/following-sibling::div[contains(@class,'ui-radiobutton-box')]/span[contains(@class ,'ui-icon-blank')]
+
+
+_______________________________________________________________________________________________________________________
+
+                                               executing test cases multiple times
+
+	//enakku intha test case multiple times print aaganum without loop
+	
+	//inga @Test annotations ku invocation count nu oru parameter irukku athu kuduthu count mattum kuduthuta
+	//pothu athu antha thdava execute aagum
+	
+	
+	@Test(invocationCount = 4)
+	public void test1() {
+	
+		System.out.println("i am multiple");
+	
+___________________________________________________________________________________________________
+
+                                   set time out for test case 
+
+// oru test case evlo nerathula execute aaganunu namma time set panlam , anma set panna time la antha test case execute aagalanna
+	//athu automatica fail aagidum
+	
+	
+	//ippo intha test case ku 2 sec than time set pannirukan ,antha 2 sec la intha test case execute aagalanna 
+	//athu fail aagidum
+	
+	@Test(timeOut = 2000)
+	public void timeout() throws InterruptedException {
+		Thread.sleep(3000);  // inga test case ulla 3 sec wait pannisollirukkan, but ennakku intha test case 2sec la execute aaganum
+		                    // so automatic ahh ithu fail aagidum
+   System.out.println("tttt");
+      }
+
+------------------------------------------------------------------------------------------------------------
+
+                                         handling exception in testNG
+
+           
+	// ippo oru test case ahh run pannum pothu athu intha exception tharum nu therinchu antha exception ahh athuku parameter ahh
+	//kuduthutaa antha test case fail nu kaatama, pass nu kaatum , athu failnu kaatathu  run aagum an passed ku varum
+	
+	// ***** ExpectedException  ******* nu podanum
+	
+	/*
+	   @Test(timeOut = 2000) public void timeout() throws InterruptedException {
+	   Thread.sleep(3000);
+	    aagidum System.out.println("tttt"); }
+	 */
+	
+	 //ithula kandippa exception varum , yenna nan test cae ahh 2 sec la finish panna soldran, but athu ulla 3 sec eduthukuthu so exception
+	 //varum
+	
+	 //intha case la namma ExpectedException use pannikalam
+
+	   @Test(timeOut = 2000,expectedExceptions =ThreadTimeoutException.class )
+	   public void timeout() throws InterruptedException {
+		Thread.sleep(3000);  // inga test case ulla 3 sec wait pannisollirukkan, but ennakku intha test case 2sec la execute aaganum
+		                    // so automatic ahh ithu fail aagidum
+            System.out.println("tttt");
+             }
+           }
+
+
+
+    /* -------   OUTPUT----failed nu varama passed nu vanthuruku
+     *    
+     * [RemoteTestNG] detected TestNG version 7.3.0 PASSED: timeout
+     *  
+     * =============================================== Default test Tests run: 1,
+     * Failures: 0, Skips: 0 ===============================================
+     * 
+     * 
+     * =============================================== Default suite Total tests
+     * run: 1, Passes: 1, Failures: 0, Skips: 0
+     * ===============================================
+     */
+
+____________________________________________________________________________________________________________________
+            
+                   ***************** Significance of alwaysRun attribute **********************
+
+  ********** depends on method and depends on group paakanum   *********
+	//ippo use ahh namma oru method ku mela depends on potu innoru method name potta  antha method faila aachuna intha methoad nadakkathu, 
+	// enakku depend on um podanum, antha oru method ahh depend pannirukka innoru method fail aanalum antha enakku intha methoa method nadakkanum
+	
+	// inthamaari case la namma  ***** AlwaysRun =true *****  ndra parameter ahh use pannikalam
+	
+	@Test(timeOut = 2000)
+	public void parentsPermission() throws InterruptedException {
+		Thread.sleep(4000);
+		
+		System.out.println("parents permission granted");
+	}
+	
+
+	
+	@Test(dependsOnMethods ="parentsPermission",alwaysRun = true)
+	public void loveMarriage() throws InterruptedException {
+		Thread.sleep(4000);
+		
+		System.out.println("marriage happaend");
+	}
+
+____________________________________________________________________________________________________
+
+                                webdriver manager
+
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\eclipse-workspace\\selenium_tutorials\\src\\chromedriver.exe");
+
+intha line use pandrathuku pathila namma Webdriver manager use pannikalam
+
+____________________________________________________________________________________________________________
+
+ ************************************** data driven Framework  ***********************************
+
+                
+                            *******  what is frmaework  ******
+
+       In computer systems, a framework is often a layered structure indicating what kind of programs 
+      can or should be built and how they would interrelate.
+  
+      *********  what is data driven faremwork  *************************
+
+      Data Driven framework is used to drive test cases and suites from an external data feed. 
+      The data feed can be data sheets like xls, xlsx, and csv files. A Data Driven Framework in Selenium is a technique 
+      of separating the “data set” from the actual “test case” (code).
+
+
+***** testNG la xml file la oru test  eluthi athukkull multiple class poda koodathu
+
+ ithula enn problem na oru test la 4 test cases run aagirukkum, so cleint vanthu oru test than run aayirukkanu keppan
+
+so namma ethana test run pannanundra actual count run aaganum, so ovvoru class kum ovvoru individual test tag kulla pottukanum
+
+data driven frame work nan datas nammalaathan oru file la kudukkanum, inga nan nan passwoend user name kudukkura excercise pannitu irukkan
+athula en test case la la ye athavathu oru method kullaye nan send keys use panni athoda user name password kuduthuran, , useal ahh apdi thara koodathu, namma athanaala
+than namma data drivern frame work use pandram, so athula namma namma kudukampora datas ahh  velya oru file valiyathan kudukkanum
+
+yenna namm atest cae laye namma datas ahh kuduthurom, athavathu program laye datas ahh send pannirom, nalaiku antha dtats la oru chanfge aaguthu, ill acredentilas ahh
+ethavathu change pandraanganna, namma program la vanthu than atha again edit pannanum, so apdi panna koodaathathu so athan namma veliya oru file la irunthu
+thevaiyada datas ahh tharanum
+
+so atha test case ku veliya irunthu datas ahh kudukkanum
+
+testNG la data va provide andrathukunu oru tag irukku athan parameters ahh use panni onnu onnuka kudukka poram ovvoru test case kum
+
+athavathu ovvoru method kum namma parametr ndra tag kulla namma antha test case ku tharanumnu nenaikura datas ahh parameter ahh tharanum
+and method la atha receive pannika antha para name hha kudkkanum
+
+step 1: testNG xml la athavathu namma test case ahh ellam execute pandra xml file ahh ovoru test case ku oru test eluthukanum
+step2: antha name ahh eluthikanu, (package name . class name)
+step2\3:antha class kula irukka methods ku athavathu athum oru test case than , antyha method kulla namma thara vendiya
+parameterrs ahh eluthikanu,ethana parameter kudukanumo athna paramter tage eluthi athuku name pootukanum and athoda value ahh pottukanum
+
+step4: ippo code la poi, that means selenium code la poi @parameters ndraannotations pottu athual({"",""}) namma para meter name ahh podanu
+ antha antha methukulla atha receive pannika namma parameter receiver ahh eluthikanum(string user name , String password) ipdi
+
+step 5: ippo antha parammter ahh namma eduthu use pannikalam
+
+   ippo namaku datadriven na number of code reduce aaganum, namma parameters use panni testNG valiya namma datas ahh provide pandram, but irunthalum, namakku 
+ore maathiriyaana velaiya seiiya koodiaya functionality ku namma thani tha ni class use panni eluthi
+ athukull athukku parameters use panni datas ahh kudukkurathuku namma *** Dataprovider **** ndra annotation ahh use panni
+datas ahh kudukkalam, and athey samayam namakku no of code um reduce aagum 
+
+_______________________________________________________________________________________________________________________
+
+                                               dataproviders
+     What is the difference between DataProvider and Parameter in TestNG? DataProviders pass the different parameters on
+      a single test in a single execution, whereas parameters pass the parameters just once per execution in TestNG
+
+
+
+   
+TestNG provides two mechanisms for passing data to test methods: data providers and parameters. Let's explore the differences between them with step-by-step examples:
+
+Data Providers:
+Definition:
+
+Data providers are methods annotated with @DataProvider.
+These methods supply data to the test methods.
+Signature:
+
+Data provider methods must return a two-dimensional array (Object[][]).
+Each row of the array represents a set of test data.
+Usage:
+
+Test methods consume data provided by data providers by specifying the data provider's name in the dataProvider attribute of the @Test annotation.
+Example:
+
+java
+Copy code
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class DataProviderExample {
+    @DataProvider(name = "data")
+    public Object[][] testData() {
+        return new Object[][] {
+            {"user1", "password1"},
+            {"user2", "password2"},
+            // Add more test data as needed
+        };
+    }
+
+    @Test(dataProvider = "data")
+    public void testLogin(String username, String password) {
+        // Test logic using username and password
+    }
+}
+Parameters:
+Definition:
+
+Parameters are values passed directly to test methods using the @Parameters annotation.
+The parameter values are specified in the testng.xml file.
+Usage:
+
+Define parameters in the testng.xml file using the <parameter> tag.
+Test methods consume parameters by declaring parameters with the same name as specified in the testng.xml file.
+Example:
+
+xml
+Copy code
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+    <test name="TestCase">
+        <parameter name="username" value="user1" />
+        <parameter name="password" value="password1" />
+        <!-- Add more parameters as needed -->
+        <classes>
+            <class name="ParameterExample" />
+        </classes>
+    </test>
+</suite>
+java
+Copy code
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class ParameterExample {
+    @Test
+    @Parameters({"username", "password"})
+    public void testLogin(String username, String password) {
+        // Test logic using username and password
+    }
+}
+
+
+
+Summary:
+Data providers are more flexible and allow you to generate test data dynamically within Java code.
+Parameters are useful when you want to specify fixed values for test methods externally, such as in a testng.xml file.
+Both mechanisms help in achieving data-driven testing, where the same test logic is executed with different sets of data. Choose the appropriate mechanism based on your requirements and the source of your test data.
+
+
+
+
+_________________________________________________
+
+   -----------------------  provide data to code through the excelSheet  -------------------------
+
+    we have to download the jar file to achieve this
+    2 jars are there 
+
+     1. APache POI
+     2.JXL
+
+     Steps with Apache POI Jar
+     /**Aim: Excel reading.
+     Requirements: We need Apache POI Or JXL Jars to read Excel.
+     Steps: 1. Read the file location
+     2. Create Object for Workbook
+     3. Go to the sheet to be worked on
+     4. Row Iteration and get row values
+     5. Cell Iteration and get cell values
+
+   Steps with JXL Jars
+
+      note: Excel 97-2003 ndra format la namma xl file ahh save pannathan than namma laala JXL jar ahh use pannan mudiyum
+     1. File location
+     2. Get Workbook
+     3. Get sheet
+
+     4. Get rows
+     5. Get columns
+     6. iterate and get cell values.
+
+  ithu  Excel data structure   intha structure ahh than namma code kulla tharumpthu  keela irukka maari 2d a tharanum
+               
+     [0,0] UserName               [1,0]  Password
+     [0,1] admin                  [1,1] padmin
+     [0,2]admin2                  [1,2]dmin2
+     [0,3]Admin                   [1,3] admin
+     [0,4][Admin1                 [1,4]admin
+
+
+
+      mela irukka excel cel structure ahh  inth maari Two dimensional array structure lu irukkuramari than code eluthanum
+
+    [0.0] admin                [0,1] admin
+    [(1,0]admin2                [(1,1] admin2
+    [2,0]Admin                  [2,1] admin
+    [3.0] Admin1                [3,1]_admin
+
+
+_______________________________________________________________________________________________________________
+
+                                     Pom(page Object Model)
+
+ippo ui la oru button iruuku or elemnt irukku antha elementaa namma oru 100 difrent test cases la potruppom, sudden ahh antha elemnent oda
+property change aayiruchu, onnu rendu test case kooda poi broswser la enna entha elemnt ku enna property or values change aayiruku paathu again rest pannikalam
+ithuve oru 100 test casekum antha elemnt irukkum pothu ovvoru test case la yum poi nammalaala change pannitu irukka mudiyathu
+
+ui la namma code la future la sila elemts ods property or value or enna change pannalum atha withstand panddra maari namma code ahh eluthanum
+ namma code ala minor ahh oru change pannaley puthusaa vantha modification ku withstand pandramaari elutha mudiyum ndra maari oru setup ahh kondu vara mudiyum
+
+so actual test case kulla functionalityaa mattum vachhaa pothum athukku pathila atha epdi find pannanumndra methodology ahh test case kulla embed pannama atha
+segrigate panni velila eduthu vaikurathu than pom oda main purpose
+
+oru element ahh epdi find pandramndratha test case la irunthu extract panni edukkurathum than POM  
+
+
+https://phptravels.net/login
+https://phptravels.net/dashboard
+
+___________________________________________________________________________________________________________________
+                                        
+                                        pageFactory
+                 
+
+     namma pageObgject model ethuthunathuku aapuram atha implement pandratnhuku page factory oru class irukku, antha page factory
+ class ahh use panni thannamma enhanced pageobject model ahh implement panna poram
+
+________________________________________________________________________________________________________________________
+
+                                                    Selenium Exceptions
+
+java.lang.RuntimeException
+     org.openqa.selenium.WebDriverException               // itha parrent exception
+                org.openqa.selenium.lmeActivationFailedException
+                org.openqa.selenium.lmeNotAvailableException
+                org.openqa.selenium.lnvalidArgumentException
+                org.openqa.selenium.lnvalidCookieDomainException
+                org.openqa.selenium.lnvalidElementStateException
+                        org.openqa.selenium.ElementNotinteractableException
+                                  ◦ rg.openqa.selenium.ElementClickinterceptedException
+                                  ◦ org.openqa.selenium.ElementNotVisibleException
+                       org.openqa.selenium.ElementNotSelectableException
+                org.openqa.selenium.JavascriptException
+                org.openqa.selenium.NoSuchSessionException
+                org.openqa.selenium.NotFoundException
+                            org.openqa.selenium.NoAlertPresentException
+                            org.openqa.selenium.NoSuchContextException
+                            org.openqa.selenium.NoSuchCookieException
+                            org.openqa.selenium.NoSuchElementException  
+                                      ◦ org.openqa.selenium.lnvalidSelectorException
+                            org.openqa.selenium.NoSuchFrameException
+                            org.openqa.selenium.NoSuchWindowException
+                org.openqa.selenium.ScriptTimeoutException
+                org.openqa.selenium.SessionNotCreatedException
+                org.openqa.selenium.StaleElementReferenceException
+                org.openqa.selenium.TimeoutException
+                org.openqa.selenium.UnableToSetCookleException
+                org.openqa.selenium.UnhandledAlertException
+                org.openqa.selenium.UnsupportedCommandException
+
+
+
+  ithula nmakku regular ahh varathu or 4 or 5 exception than
+  
+   1.org.openqa.selenium.NoSuchElementException  : namma oru elemnt ahh seARCH pannum poth antha element anga illana or antha elemet od properties ahh  
+                                                                           thappa eduthaalo athu intha no such element exception varum
+
+
+  2.org.openqa.selenium.StaleElementReferenceException : oru element oru page la irunthu vera oru page ku navigate aanalo illa refresh aanalo again 
+                                                                  antha element annamuse panrappo inthe staleelement exception adikkum
+
+
+                                                      ippo oru elemet use panni vera oru page ku navigate panni poiruchi or poitu again athey page ku vantan , ippo antha elementa
+                                                       vachi innor operation pannadarappo intha exception varum
+
+                              example ku send keys use panni oru search box la keys send panni vera  oru page ku navigate aaiyruchu ippo antha elemnt ahh ye use panni
+   namma antha keys ahh clear pannum pothu athu text ahh clear pannathu intha exception adikkum, ahgain namma antha element ahh find panni clear panna tha clear aagum
+
+                       oru thadava find panna element ahh vachi again agai again inooru operation antha element ahh vachi paqnna namakku staleelement exception varum
+
+  3.  org.openqa.selenium.UnhandledAlertException  :  oru alert irukka webapllicatuon kooda namma interact pannitu irukkom, etho oru action panrom athoda result ahh namaku ou 
+                                                     alert varuthu antha alert ahh namma handlepannamaley annam vera oru action panna try pandram,
+                                                       appo vara exception ku peru than unhandle exception
+
+
+  4.  org.openqa.selenium.lnvalidElementStateException  : ippo namma HTML la oru button irkku aana atha hide nu pottu hide panni vachirukkam,
+                                                         ippo antha element ahh access panna try pandrappo intha exception varum
+ 
+  5.  org.openqa.selenium.ElementNotVisibleException : lnvalidElementStateException oda child than in tha exception , ithu textbox ohh illa button ahho hide aayirukkum pothu intha exception varum, 
+                                                       text box ahh porutha vara element not vsible exception atha adikkum,  but inth oru textbox ahh clear pandrappo mattum lnvalidElementStateException ndra 
+                                                       exception adikkum
+
+   6. org.openqa.selenium.NoSuchFrameException : ippo oru frame ndrathu oru HTML page ahh innoru HTML page kulla embed pandrathu than, so atha namma antha frane od anme or
+                                                 id or index ahh vachi access pannikalam, apdi access pannum pothu antha frame antha eduthla illanaa intha exception varum
+
+  7.org.openqa.selenium.NoSuchSessionException :  ippo browser la sila elemets ah ellam find panniuo ill ahh ethavathu oru operation pandran, pannitu antha browser ahh 
+                                                  quite pannitan, ippo quite pannathuku apporam athey broswer  driver ahh vachi  ana etahavthu oru operation pandranna enakku 
+                                                  intha nosession exception erro varum, yenn aantha session close aayiruchu, so intha exceptionadikkum
+  
+  8.org.openqa.selenium.NoSuchWindowException :  ippo namma window handle la ,, atahavathu namma ippo oru button ahh click pandram ,athula irunthu multiple windows open
+                                                 aagum, apdi open aagum pothu ,namma get window handle vachi antha window ahh eduppom,appo current ahh open aayirukka window oda access pannikalam, but 
+                                                 athula illa window ku nan window handle ahh provide pannum pothu , antha window anga irukkathu so namakkunintha exception varum, 
+                                                 athavathu illatha oru window van namma acess panna try pannum pothu intha Nosuchwindow exception varum
+
+
+ 9. org.openqa.selenium.ElementNotinteractableException :  namma entha element la oru operation pannanumo antha elementaa correct ahh find pannirukka maatom or 
+                                                          proper ah athu load aagurathu ku munnadiye, antha elemenet ahh access pandrathuku munnadiye vera oru element antha element ahh overlap pannikum
+                                                        so namma perfor pandra operation operation antha element ku poirum, appo inthha exception adikkum
+
+ 10. timeout exception:  oru site kulla poga try pandram , antha samyathula server slow avva irukku, so nammalaala antha site kulla poga mudila antha maari samayathula
+                           intha timeout exception varum
+ 
+ 11. session not created exception :  oru browser ahh run pannitu irukkum pothu athu load aagimathu varathukku munnadiye namma atha close panni vituddram , athavathu athu load aagurathu ku munnadiye atha close pannum pothu
+                                   namakku intha exception varum.
+
+ 12. javascript exception : javascript la ethavathu error iruntha appo athu thro pandra exception than intha javascript exception
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+============================================================ testNG TUTORIALS  =================================================
+package testNG;
+
+import org.testng.annotations.Test;
+
+public class SampleTestCase {
+	@Test
+	public void firsttestcase() {
+		System.out.println("this is the first test case");
+	}
+	@Test
+	public void secondtestcase() {
+		System.out.println("this is the first test case");
+	}
+
+	@Test
+	public void thirdtestcase() {
+		System.out.println("this is the first test case");
+	}
+
+	@Test
+	public void fourthtestcase() {
+		System.out.println("this is the first test case");
+	}
+	
+	// ipdi potu run pandrathukku normall ahh right click panni run application nu tharuvom, namaku inga mainmethod illatha thaala
+   // itha edi run pannanunu theriyathu. 
+	// ippo mela irukka ella method um oru normal method than, itha testNG test case ahh epdi maathurathunna @Test nu oru
+//	annotation add pannanum
+	//@TestNG mela hover pnna 2 option kaatum.1 is add junint library 2.add tetNG library, itha testNG instal pannirunthaa mattum than kaatum
+	
+   // athula import org.testng.annotations.Test; immport pannikanum
+   // @testNG potta ovvoru method um oru test case ahh maaridum
+	//right click --> run as thantha TstNG test nu kaatum, athu cick panni run panlam
+
+
+-----------------------------------------------------------------------------------------
+               HOW TO SET PRIORITY TO TEST CASE
+programe la test cases and expalantions irukku
+
+------------------------------------------------------------------------------------------
+
+********************** writing test suits ********************************
+
+ippo namma kitta oru 100 class irukku athavathu test case, namma claas kulla ethulurathu test case than but industry la ovvoru class ahhyum testcase nu thaan
+olluvanga, ok ippo nan 100 test case vachirukkan , nan atha run pannanunaa ovvoru test case um ope panni run panitu vara late aaagum yenna neraiya test cases irukkum
+so nan orey shot la motha test case ahhum run pannanum, 
+
+so athanala nan oru suit create pannitu antha suite la namma yella test cases ahhyum pootutu vanthu and atha run padram
+
+so create pandrathu epi nan namma project la poi oru xml file onnu create panni athula mention pannannum enoda ella test case ahh um combine panni
+nan oru testsuite create pandrannu sollanum
+
+ <?xml version="1.0" encoding="UTF-8"?>
+
+          <!-- suite nu oru tag create panndran  -->
+ <suite name= "testsuite"> <!-- inga suite ku oru name set pannikanum, enna name venaenna name vena, ithula verbose nu or attributes set pandran apdinna 
+                        ennana namma output file ala log level epdi irukkanunu sollum, athavathu that means ecaach class and methods run panna eduthuta time ahh details ahh ve kaatum --> -->
+             <!--athukulla test cases write panna porathaala test nu oru tag create pannikuran  -->
+   <test name="firsttest">
+              <!-- intha test cases lam ethula write pannirukkanan class la (oru class la multiple methods(testcases eluthalam) or claas ahhye
+              test case ahh eluthulam, normal ahh test cases ahh indutry la class la than eluthuvanga)  so inga nan testNg ndra package la irukka oru 4 classes
+              ahh tha test case ahh poda poran yenna nan antha 4 classes than run panna poran, so athanala na classes ndra tage create pannitan  -->
+      <classes>
+              <!-- ippo antha classes kulla namma test pannanunu nenanaikura individual class ellathayum eluthanum so nan class ndra tag create pannikuran
+                so ippo intha class kulla package name.class name ipdithan class name ahh mention pannanum -->
+        <class name="testNG.DependenciesHandling"></class>
+        <class name="testNG.DriveACar"></class>
+        <class name="testNG.SkipTestCaseorIgnoreTestCase"></class>
+       <class name="testNG.WritingTestSuitInTestNg"></class>
+    </classes>
+   </test>
+
+
+ </suite>
+                             <!--  ippo namakku ella class um (test cass) run aagirukkum, athoda output keele irukku
+                             
+                             tenth
+                         12th
+                       degree
+                     start the car
+                   this is first gear 
+                      second gear 
+                      this is tird gear
+                     fourth gear
+                      start the car
+                      this is first gear  
+                            second gear 
+                    this is tird gear
+                            fourth gear
+
+===============================================
+testsuite
+Total tests run: 16, Passes: 15, Failures: 1, Skips: 0
+Configuration Failures: 1, Skips: 0
+===============================================
+
+--------------------------------------------------------------------  grouping testcases  ---------------------------------------------------------------
+
+        Scenario: A big basket is having a different kind of mobiles.
+                 Let US say there are Apple phones, Moto G, VIVO and Lenovo.
+                 I want to run tests only for VIVO and Moto phones. Write a program for that.
+
+
+
+package testNG;
+
+import org.testng.annotations.Test;
+
+public class GroupingTestcasess {
+
+	/*
+	   Scenario: A big basket is having a different kind of mobiles.
+      Let US say there are Apple phones, Moto G, VIVO and Lenovo.
+       I want to run tests only for VIVO and Moto phones. Write a program for that.
+	  */
+	
+       //ippo enakku vivo and moto oda test cases mattum run aaganum, inga thaan grouping  concept use aagum
+	
+	 // 1.intha program kaana GroupingTest.xml  ithuku related aana explanation irukku atha padichitu next intha 2 vathu explanation ahh padi  2.so nan inga groups nu @test la oru parameter irukku ippo nan ella test cases ku groups nu pottu athukku oru name athu enna 
+	 //name vena irukkalam,  inga groups pootu name ahh vachitu antha name ahh kondu poi xml file entha test case ahh include pannanumnu
+     //nenaikurano or exclude pannanunu nenaikkurano athula intha name ahh tharalam
+	
+	@Test(groups= {"applegroup"})
+	public void apple1() {
+		
+		System.out.println("phone1");
+	}
+	@Test(groups= {"applegroup"})
+   public void apple2() {
+		
+		System.out.println("phone2");
+	}
+	@Test(groups= {"mottogroup"})
+   public void motto1() {
+		
+		System.out.println("motto1");
+	}
+   
+	@Test(groups= {"mottogroup"})
+   public void motto2() {
+		
+		System.out.println("motto2");
+	}
+   
+	@Test(groups= {"vivogroup"})
+   public void vivo1() {
+		
+		System.out.println("vivo1");
+	}
+   
+	@Test(groups= {"vivogroup"})
+   public void vivo2() {
+		
+		System.out.println("vivo2");
+	}
+   
+	@Test(groups= {"lenovagroup"})
+   public void lenovo1() {
+		
+		System.out.println("lenova1");
+	}
+   
+	@Test(groups= {"lenovagroup"})
+   public void lenova2() {
+		
+		System.out.println("lenova2");
+	}
+   
+   
+	
+}
+________________testNG xml  to runthis program is below __________________________
+ 
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+<suite name="Grouping Suites" verbose="2">
+<test name="Grouping test">
+            inga test kulla groups nu oru tag irukku, apdinna intha testcase kulla irukuratha group group ahh run panna poram, so run use pannikuran   
+            so ennoda class kulla irukkra test cases ahh group group ahh run pannika poran, athu ennthentha group na , vivo and moto
+            ndra test cases ahh group pannikuran, so nan entha test cases ahh group pannannumo atha run kulla include nu pottukanu, ethe ethellam venamo athellam nan exclude nu pottukanum
+            yenna nan testNG.GroupingTestcasess ndra pakage la irukka GroupingTestcasess ndra class fulla than nan inga kuduthurukkan
+            and enakku athula sila sila test cases ahh mattum group pannim eduthu atha include ahh pottu meethi ellathayum exclude la pottu run pandran,
+            inga apple layum leno vaavayum exlude la potta meethi irukka  vivo and moto yum run aagum , 
+            illa nan intha vivo and moto va include la potta athu maatum run aagum methi irukka apple and lenova exclude la podama irunthaalum anthu exclude than so podanundra need illa 
+            rendula ethavathu oru optionahh use pannikalam , inga naan include ye use pannikuran, 
+            ippo nan motto and vivo group names include pannathaala  meethi ella groups um automatic ahh exclude la poirum 
+<groups>
+<run >
+<include name ="mottogroup"></include>
+<include name ="vivogroup"></include>
+<exclude name=""></exclude>
+</run>
+</groups>
+<classes>
+<class name = "testNG.GroupingTestcasess"></class>
+</classes>
+</test>
+</suite>
+
+
+
+ OUTPUT   SO enakku motto and vivo ndra groups la irukka 4 test cases mattum run aagirukku    ...
+
+motto1
+motto2
+vivo1
+vivo2
+PASSED: motto1
+PASSED: motto2
+PASSED: vivo1
+PASSED: vivo2
+
+===============================================
+    Grouping test
+    Tests run: 4, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Grouping Suites
+Total tests run: 4, Passes: 4, Failures: 0, Skips: 0
+===============================================
+
+__________________________________________________trying this code again below __________________________________________________________________
+                                       
+ <suite name="ithan suite name">
+ <test name="ithan test name">
+ <groups>
+ <run>
+ <exclude name="applegroup"></exclude>  <!-- mel irukka code la inclde pannan , ingha exclude panni paakuran  -->
+ <exclude name="lenovagroup"></exclude>
+ </run>
+ </groups>
+ <classes>
+ <class name="testNG.GroupingTestcasess">
+ </class>
+ </classes>
+ </test>
+ </suite>                                                                          
+                                       
+   <!-- output
+ motto1
+motto2
+vivo1
+vivo2
+__________________________________________________________________________________________________________________________________________
+
+                      Paramerterization in testNG
+
+uses: ALM la update panna use aagum
+client vanthu testNG valiyathaan input kudukkanundra situvation la namma parameterised use pannanum
+
+
+ nammaloda actula test cases ellam coding eluthunathuku appuram oru software la store panni vachirupanga
+ovvoru test cases kum oru ID irukkum. antha id vachithan antha testcses ahh identify panna mudiyum
+oru test excution mudichathuku appuram ALM la poi antha testcse paas aacha illa fail aachaa nu verify pannuvom, so athey maari than 
+ella test case ahhyum automate pannannum ellame execute aaganumm, aanathuku appuram,status ahh ALM poi update pannanum
+
+ALM poi update pannanunma athuku 1st TEST ID theve
+antha test cases ellam oru test suite kulla irukkum, oru test suite kulla multiple test cases irukkum, so entha test suite kulla
+antha testcses lam irukku theriyanum and test cases id ahhyum theriyanum
+ exx:Test suite --->2345
+          test-->123
+
+ippo drive a car ndra test case irukku ippo athoda result ahh naan ALM la update pannanumna, entha test case ku intha DRIVE A CAR ndta
+result poi update aaganunu naan than sollanum , antha nerathula naan than input kuduthu inga store pannunu sollanum , so athukku tha intha
+parameterization use aaguthu
+
+simple hhaoru program run aagum pothu athuku xml valiya oru input ahh tharanumna namma parametrization use pannikalam
+
+-__________________________________________________________________________________________________________________
+
+                                  patralell testing
+
+                   need for paralel testing
+  paralel testing ethuku use pandranmna  ippo namamku 3 test case case irukku athu onnoda onnu dependant kedaiyathu
+
+so indipendat test cases ahh run pandrathukku, oru test naala innoru test ku entha affect um illa ndra situation la namma
+antha ella test cases ahh yum onnave orey samayathula run panlam ,ithu thaan paralel testing
+ so itha namma testNG use panni panlam.
+
+
+    package testNG;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class ExecutingTestCaseInParalel {
+	@Test
+	public void opengoogle() {
+		System.setProperty("WebDrver.chrome.driver","\"C:\\\\Users\\\\User\\\\eclipse-workspace\\\\interviewquestions\\\\src\\\\chromedriver.exe" );
+	WebDriver driver = new ChromeDriver();
+	driver.get("https://www.google.com");
+	driver.quit();
+	}
+	@Test
+	public void openbing() {
+		System.setProperty("WebDrver.chrome.driver","\"C:\\\\Users\\\\User\\\\eclipse-workspace\\\\interviewquestions\\\\src\\\\chromedriver.exe" );
+	WebDriver driver = new ChromeDriver();
+	driver.get("https://www.bing.com");
+	driver.quit();
+	}
+	
+	// ippo intha 2 test um onnu open aagi close aanathuku appuram innonu open aagi close aagum, rendum onnoda onnu depend panni illa rendayum onna run panna
+	//rendum affect aagumndra maari entha situation ahhm illa, so nan rendu test case ahhum onna run panna mudiyum, atha ennala testNG la panna mudiyum
+
+
+}
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--ippo intha suite kulla sila test cases irukku, athavathu class kulla kuduthurukkan, ippo antha test cases la athavathu antha class la
+irukka methods(class kulla irukka test case nu sollvom) namma function ahh than method nu solluvom, antha class la irukk methods ellam paralell ahh
+orey samayathula run panna poran method level ahh, so nan paralel ndra tag attribute use anni pannlam, and thread count n innoru attribute irukku
+athu enna pannumna process run aaganumnu soldrathu, enakku inga rendu chrome process run aaganum, so athayum pottukuram  apdinna rendu browser la op[pen aaganum nu soldran  -->
+<suite name= "testsuite" verbose="2"  parallel= "methods" thread-count="2"> 
+<test name="paralleltest">
+<classes>
+
+<class name="testNG.ExecutingTestCaseInParalel"></class>
+
+
+</classes>
+</test>
+</suite>
+
+<!--  output  ennanana inga  bro browser la enakku 2 test casesum run aagum,athanalal tha thread count 2 nu pottan-->
+
+________________________________________________________________________________
+
+                                       Assertions
+
+        //rendu visiyatha compare pandrathuku namma if or conditional stsmnt use panni periya program ahh eluthi compare pandrathuku namma test Ng la Assertions nu  irukku atha vachi
+
+	// Asserts are validations or checkpoints for an application,
+	//Asserts in Selenium validate the automated test cases that help testers understand if tests have passed or failed. 
+	
+	
+	// oru developer than eluthana code ahh thanae selfreview panni test pandrathuku peru than Assertions
+
+
+    rendu content equal ahh illanu paaka namma AssertQEquals use pamnnuvom rendum equal illana Aeert error nu varum
+
+_______________________________________________________________________________________________________________________
+                       
+                                                     AnnotationaandOrderofExecution
+
+ippo @test Annotation la athoda execution order epdi irukkumna method name oda alphabetical order la irukkum
+
+@dataprovider oru annotations irukku athu ethukkuna, parametrs aum dtatprovider um ore functionality ahh than seiyum
+parameter la namma single data va matum than kuduthom, but combination of datas like( username and password) , and mutiple difrent data types la irukka datas ahh
+provide pannanumna apdindra situation la namma dataprovider annotaions ahh paapom
+
+intha order la Annotations work aagum
+
+
+       @before suite
+    @before test
+    @before class
+    @before method
+    @test
+    @After method
+    @After class
+    @After test
+    @After Suite
+
+                 package testNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
+
+public class AnnotationsHirarchyExample {
+  @Test
+  public void f() {
+	  System.out.println("@test");
+  }
+  @BeforeMethod
+  public void beforeMethod() {
+	  System.out.println("@before method");
+  }
+
+  @AfterMethod
+  public void afterMethod() {
+	  System.out.println("@After method");
+  }
+
+  @BeforeClass
+  public void beforeClass() {
+	  System.out.println("@before class");
+  }
+
+  @AfterClass
+  public void afterClass() {
+	  System.out.println("@After class");
+  }
+
+  @BeforeTest
+  public void beforeTest() {
+	  System.out.println(" @before test");
+  }
+
+  @AfterTest
+  public void afterTest() {
+	  System.out.println("@After test");
+  }
+
+  @BeforeSuite
+  public void beforeSuite() {
+	  System.out.println(" @before suite");
+  }
+
+  @AfterSuite
+  public void afterSuite() {
+	  System.out.println("@ After suite");
+  }
+
+}
+
+
+/* intha order la than execution nadakkum, ithu namma xml intha order la code eluthuram
+    @before suite
+    @before test
+    @before class
+    @before method
+    @test
+    @After method
+    @After class
+    @After test
+    PASSED: f
+
+     ===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+    ===============================================
+
+    @After suite
+
+   ===============================================
+   Default suite
+   Total tests run: 1, Passes: 1, Failures: 0, Skips: 0
+   ===============================================
+
+
+ */______________________________________________________________________________________________________
+
+                                                 ListenersinTenstNG
+
+             listen” to the events in a script and modify TestNG behavior accordingly.
+    the most common usage of listeners occurs when taking a screenshot of a test that has failed and the reason for its failure
+
+
+1.listernrs na oru test execution ahh listen pannite irukku antha test cases oda output ahh base panni vera oru action ahh ithu perform panna poguthu.
+
+2.apdinna, oru test case start pannathuku appuram ithu nadakkum , athu end aanathuku appuram ithu nadakkuanum, athu pass aanathu kppuram ithu nadakkanum, athu fail aanathuku appuram ithu nadakkanum
+or skip aachunu ithu nadakkanum, or pass aana kooda atghoda pass % intha range la irukkanunu ndat tha soldrathukku 
+
+3.testcase la vara result ahh base panni vera onna achieve  panna
+
+ types
+
+     ITestListener 
+     IAnnotationTransformer
+     IInvokedMethodListener
+     ISuiteListener
+     IReporter
+     IConfigurable
+     IExecutionListener
+     IHookable
+     IMethodInterceptor
+     IConfigurationListener
+  
+
+   ITestListener :
+
+    onStart
+   onFinish
+   onTestStart
+   onTestSkipped
+   onTestSuccess
+   onTestFailure
+   onTestFailedButWithinSuccessPercentage
+
+                                               
+intha listeners ethukaagana oru test case  execution status ahh poruthu start aagarathuku munnadi oru action panlam, pass aachuna atha oru action illa faila aachuna oru action perfor panlam
+execution nadakkama skip aachuna atha vachi oru action panlam , namma expicit ahh call panna vara output ahh related panni or ethavathu action ahh paerform pandrathu thaan
+
+
+               package testNG;  // listener eluthui intha class ku thara poran
+
+import org.testng.annotations.Test;
+
+public class SampleTestCase {
+	@Test
+	public void firsttestcase() {
+		System.out.println("this is the first test case");
+	}
+}
+
+
+
+
+
+
+
+
+     package testNG;
+
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+//ippo nan listner eluthittan, ippomnan oru class kulla intha listener kudutha antha class la ethavathu oru method fail 
+//aana inga irukka irukka method onna athu automatic ahh eduthukum, so testNG la poi intha listener ahhyum entha class intha
+//lister use pannanundratha yum sollanum
+
+ public class ListenersinTenstNG implements ITestListener{
+	
+	// nan listener eluthittan so itha ellathayum namma engayum call panna nundra avasiyuam illa namma test execution ahh poruthu athuve call aagigkkum
+//	ithula irukka methods ku suite aagura maari iruntha
+ 
+	@Override
+	public void onTestStart(ITestResult results) {  //
+		System.out.println("test case is going to execute");
+		
+	}
+	
+	@Override
+    public void onTestSuccess(ITestResult results) { //oru test case success aanathuku appuram enna pannanundratha sollalam
+		System.out.println("test case is passed");
+	}
+	
+	@Override
+    public void onTestFailure(ITestResult results) { //oru test case fail aanathuku appuram enna pannanundratha sollalam
+		// ippo oru vela ui automation pannitu irukkomnu vachipom, ui ethavathu oru reason kaaga fail aagirukkum, antha samayathula screen shot edutha use fulla ha irukkum
+       //so namma implement pamndrappo, ethavathu oru method fail aana automatic ahh intha method call aagum, suppose ippo oru test case fail aaguthu antha samayathula intha method namma  write panni vachiruntha direct ahh inga varum inga namma
+       //screenshot edukkura process ahh eluthi vachiruntha athu auto matci ahh fail anna test case ku screenshot eduthu kudukkum
+		System.out.println("test case is failed");
+  }
+
+	@Override
+   public void onTestSkipped(ITestResult results) {
+		System.out.println("test case is skipped");
+      }
+
+	@Override
+  public void onTestFailedButWithinSuccessPercentage(ITestResult results) {
+	
+		 // ippo oru 100 test cases irukku athula oru 10 test case irukku apdinna nammaku 90% sucesss thana,  anthha maari case faile aayiruchu
+//		but sucess percentage la tha irukku apdinna enna pannalam apdingaratha inga eluthalam
+		System.out.println("test case is within success rate");
+	
+       }
+
+	@Override
+   public void onStart(ITestContext context) {
+		
+		// onstart naellathukum munnadi ithan nadakkum, athukappuram tha onteststart nadakkum, 
+		//ella mudichathuku appuram on finish nadakkum
+		System.out.println("test case is start before everything");
+	
+        }
+ 
+	@Override
+    public void onFinish(ITestContext context) {
+		System.out.println("test case is finished after everything");
+		
+	}	
+}
+
+----------------------------------------------  xml file for the above class -------------------------------
+
+<!-- inga nan oru suite kulla oru listener tag openpannitu lister nu namma oru class open panni atha pass ana intha method ahh call pannu, fail aana itha call pannu
+apuuram sila condition ku apdinnu oru listener class open panniruppom, so atha namma listener class name ahh inga tharanum
+  -->
+<suite name="listener"> 
+ <!-- namma create panna listener oda name ahh package. antha listener class name ahh tharanum  -->
+<listener  class-name="testNG.ListenersinTenstNG"></listener>
+<test name="listertest">
+<classes>
+
+<!-- intha class ku than nan lister ahh kuduthurukkan  -->
+<class name="testNG.SampleTestCase" >
+
+</class>
+
+</classes>
+</test>
+</suite>
+
+_________________________________________________________________________________________________________________________
+
+
+
+
+
+
