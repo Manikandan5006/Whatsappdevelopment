@@ -2,8 +2,6 @@ oru project create panna odane selenium jav ndra jar ahh anmma project la irukka
 2nd chrome driver download panni atha veliya iruntha copy panni kondu vanthu, namma project file la or package la paste pannanum
 
 
-
-
 automation testing drathu pure java um illa pure selenium um ila,
 
 selenium ndrathu oru web application irukkula , athavathu namma browser
