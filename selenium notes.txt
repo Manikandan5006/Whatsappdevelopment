@@ -3735,6 +3735,139 @@ apuuram sila condition ku apdinnu oru listener class open panniruppom, so atha n
 </suite>
 
 _________________________________________________________________________________________________________________________
+                                            maven
+
+
+
+Maven's primary goal is to allow a developer to comprehend the complete state of a development effort in the shortest period of time. In
+order to attain this goal there are several areas of concern that Maven attempts to deal with:
+Making the buld process easy
+Providing qualty project infomatia.A
+Providing a unifom build system
+Providing guidelines for best practices development
+Allowing transparent migration to new features
+
+
+
+
+maven la java 1.5 la tha default ahh irukkum , atha change pannanumna, namma 1.8 ahh maathanumnnaa namma maven compiler pluging ahh
+namma POMxml la  c copy pate pannnanum.
+
+ippo nama oru dependencies ahh download pandramna atha dependenciess ndra tag kull apodanum,
+and pugging ahh add pannanumna namma project ndra kulla than podanum
+
+ippo namma oru code ahh eluthitamna atha client ku kudukkum pothu atha instalable file ahh kudutha tha client naala run pannai paaka mudiyum so nama
+apdiye source code ahh mattum kudutha cient aala epdi run panni paaka mudiyum, athukku than istalable file ahh kudukkanum
+ so namma kitta irukka code ahh oru instalanle file ahh or executable file ahh maatithurathuku peru than build process
+so intha build process ahh pandratha than maven 
+
+oru class file ahh eluthittu atha epdi runnable jar file ah convert pandrathunaa first antha class ahh right click 
+panni export click panni athula antha class ahh export pannanumo antha class od main ahh select panni athkku location
+ kuduthu antha locton la .jar nu finish aagura maari oru jar file ahh create panniranum.
+
+athukku keela 3 oprion irukkum
+
+1.extract required  libraries into generated jar
+ippo oru class ahh  or java file ahh product ahh maathuranna antha product run aaga koodiya mission la yum namma intha project create panna use panna jar ellam irukkanum
+appothan run aagum, supporting file illama namma export pandra file vera oru system la run aagathu so  oru code ahh product ahh maathanumna antha product kum intha supoorting libraries ellam theva
+ so antha library handle panna than intha option
+
+2.package library into genarated jar
+intha option namma reference library section ellathayum namma namma ippo create panna pora jar file ku poi senthurum, ella jar ahh um bundle panni vachirum
+
+3.copy required
+ illa apdi bundle panna venam, nu enakku nan crete panna jar ku pakathulaye  ethavathu oru folder create panni anga vachi kanum na intha option ahh use panlam
+
+
+ippo export panni jar file ahh create pannita atha namma kudutha location la irukkum, ippo cmnd promt open panni  cd antha location ahh kudukkanum
+ippo antha jar file ahh mention pananum
+cd desktop
+ java -jar Opengoogle.jar  // intha Opengoogle tha an create panna jar file.
+
+
+
+ippo ithey proces ahh automate pannanumna, annam nammaloda project ahh right click pannitu runas kuduthu mavens build click pannikanum
+and ippo gols la package nu typpe pannikam, yenna oru code kudukurappo package ahh thana kuduppo athanala
+ and ippo apply kuduthu run panna, athu run aagitun jar ahh build pannirum, ippo keela paatha jar oda location irukkum atha apdiye eduthu namma system la copy paste panni paatha namma build panna file irukkum
+ippo anga antha file irukka location laye filelocation ahh kaatume anga cmd nu typ panna commnd promt antha location ke open 
+aagum antha namma file name ahh tharanum, kudutha run aaganum, apdi kuduthum no main manifest nu error vantha namma main file ahh addd pannalanu artham
+so athukku namma  namaku build panni vatha file ahh poi paatha
+classses --> meta=INf--->manifest.mf la main  irukkathu so nan inga main class ahh sollanum, or namma main method ennanu sollanum
+so ithu thaan en main class nu solla namma oru plugin ahh add pom.xml ahh add pannanum
+
+
+<plugins>
+            <!-- Maven JAR Plugin configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- Specify the main class for the executable JAR -->
+                            <mainClass>seleniumtest.Opengoogle</mainClass>
+                            <addClasspath> true</addClasspath>
+                            <classpathPrefix>lib</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+
+ithan ennoda main class ahh nan jar kitta soldrathu, ippo enakku thevaiyana libraries ahh nan ithu koodave sethu eduthutu varanum
+la appotha innoru machine la vera yaro run panum pothu or client kitta kudukkum pothu antha prodcut athavatthu code athku help pandra libratie ahh kudukanum la so athukku namma innoru plugin ahh add panni 
+antha product ku thevaiyana libraries aellam thaniya oru file ajhh eduthu kudunnu solla poram
+
+
+ippo maven namma build process oda documentation ahh epdi edukurathunna , antha project ahh
+right click--->run us-->maven build--> nu poyttu gols la site nu tharanum , apdi pann oru site onnu create aagum
+athula namma project oda details irukkum, plugins, dependencies and so on irukkum, intha site use use pandrathuku maven site plugin tha itha pannum
+
+ippo antha project oda file la site nu onnu file ceate aayirukkum, athula index.html open panna namma project oda ella details um athula irukkum
+
+
+
+ build lifecycle:
+
+clean: ithu namma craete panna ellathayum delete pandrathuku use pandram
+site:nammaku site ahh launch panni documentation ahh kudukkum
+default: project deployement ahh handle pandrathukku
+
+ovvoru build life cycle kum thani thaniya  neraiya build phases irukum, athua default than mukkiyam, intha defailt la oru 7 phases irukku
+defauld ndrathu namma project ahh deploy pandrathuku so deploy pandrathoda stating la irunthu ending vara enna nadakkuthu tha intha 7 phase:
+
+default life cycle:
+
+1.validate: validate the project correct all th information available ahh irukka illayanu paaka than intha validate
+
+2.compile:compile the source code of the project, so compile panna .java file la irunthu .class file kedaikkum, so namma compile pannathuku apuram than intha class file create aagum
+
+3.test:test the copiled source code using the suitable unit testing framework, intha test case package ahh deploy ohh aagathu
+
+4.package: take the compiled code and package it in a distributed format, such as jar.
+
+5.verify:run any checks on the results of integration tests to ensutre quality criteria are met.
+
+6.install: namakku create aana jar ahh local repositry la poi podrathuku than intha install, install the package into the local repository
+ it is for use the dependancy in other projects. 
+
+7.deploy: it is done in the build environment, copies the final package to the remote repository for sharin with other developers and projects
+
+so motha 3 life cycles and 7 phases
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
