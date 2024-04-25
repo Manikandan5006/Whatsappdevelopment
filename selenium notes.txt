@@ -1,3 +1,5 @@
+                                                    selenium notes
+
 oru project create panna odane selenium jav ndra jar ahh anmma project la irukka class path ku add pannanum
 2nd chrome driver download panni atha veliya iruntha copy panni kondu vanthu, namma project file la or package la paste pannanum
 
